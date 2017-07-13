@@ -13,6 +13,12 @@ dl, dd, ol, ul, figure {
 /**
  * Basic styling
  */
+html {
+	padding-left : auto;
+	padding-right : auto;
+
+}
+
 body {
   font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #111;
@@ -22,7 +28,8 @@ body {
   -moz-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
-  font-kerning: normal; }
+  font-kerning: normal; 
+  width : 800px; }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -102,10 +109,11 @@ code {
   font-size: 15px;
   border: 1px solid #e8e8e8;
   border-radius: 3px;
-  background-color: #aaaacc; }
+  background-color: #1B2B34; }
 
 code {
-  padding: 1px 5px; }
+  padding: 1px 5px;
+  color :  white; }
 
 pre {
   padding: 8px 12px;
@@ -280,7 +288,7 @@ pre {
  * Page content
  */
 .page-content {
-  padding: 30px 0; }
+  padding: 30px 5% 30px 5%; }
 
 .page-heading {
   font-size: 20px; }
@@ -337,7 +345,7 @@ pre {
 .highlight {
   background: #fff; }
   .highlighter-rouge .highlight {
-    background: #aaaacc; }
+    background: #1B2B34; }
   .highlight .c {
     color: #998;
     font-style: italic; }
