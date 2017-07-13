@@ -107,7 +107,7 @@ code {
   font-size: 15px;
   border: 1px solid #e8e8e8;
   border-radius: 3px;
-  background-color: #1B2B34; }
+  background-color: #272822; }
 
 code {
   padding: 1px 5px;
@@ -343,7 +343,7 @@ pre {
 .highlight {
   background: #fff; }
   .highlighter-rouge .highlight {
-    background: #1B2B34; }
+    background: #272822; }
   .highlight .c {
     color: #998;
     font-style: italic; }
@@ -525,7 +525,7 @@ pre {
   color: #339;
 }
 .highlight .o {
-  color: #333;
+  color: #FF5900;
 }
 .highlight .ow {
   color: #000;
@@ -585,9 +585,6 @@ pre {
   color: #555;
   font-weight: bold;
 }
-.highlight .s, .highlight .sb, .highlight .s2, .highlight .sh, .highlight .s1 {
-  /*background-color: #000000;*/
-}
 .highlight .sc {
   color: #04D;
 }
@@ -616,7 +613,7 @@ pre {
   font-weight: bold;
 }
 .highlight .mi, .highlight .il {
-  color: #00D;
+  color: #00F;
   font-weight: bold;
 }
 .highlight .mf {
