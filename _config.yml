@@ -24,6 +24,8 @@ github_username:  steven-jeanneret
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+
 theme: minima
 gems:
   - jekyll-feed
@@ -39,3 +41,4 @@ gems:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
