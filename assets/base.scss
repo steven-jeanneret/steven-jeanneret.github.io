@@ -346,7 +346,8 @@ pre {
 	/*Background du code*/
   .highlighter-rouge .highlight {
     background: #1D1F21;
-    /*font-family: Inconsolata;*/
+    @import url("CourierPrime");
+    font-family: "Courier Prime", "Times New Roman";
   }
   .highlight .c {
     color: #998;
