@@ -107,7 +107,7 @@ code {
   font-size: 15px;
   border: 1px solid #e8e8e8;
   border-radius: 3px;
-  background-color: #1D1F21; }
+}
 
 code {
   padding: 1px 5px;
@@ -341,9 +341,13 @@ pre {
  * Syntax highlighting styles
  */
 .highlight {
-  background: #fff; }
+  background: #fff; 
+}
+	/*Background du code*/
   .highlighter-rouge .highlight {
-    background: #1D1F21; }
+    background: #1D1F21;
+    /*font-family: Inconsolata;*/
+  }
   .highlight .c {
     color: #998;
     font-style: italic; }
