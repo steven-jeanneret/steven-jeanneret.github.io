@@ -107,7 +107,7 @@ code {
   font-size: 15px;
   border: 1px solid #e8e8e8;
   border-radius: 3px;
-  background-color: #272822; }
+  background-color: #1D1F21; }
 
 code {
   padding: 1px 5px;
@@ -343,7 +343,7 @@ pre {
 .highlight {
   background: #fff; }
   .highlighter-rouge .highlight {
-    background: #272822; }
+    background: #1D1F21; }
   .highlight .c {
     color: #998;
     font-style: italic; }
@@ -408,8 +408,7 @@ pre {
     font-weight: bold; }
   .highlight .m {
     color: #099; }
-  .highlight .s {
-    color: #d14; }
+  
   .highlight .na {
     color: #008080; }
   .highlight .nb {
@@ -485,61 +484,93 @@ pre {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*Coloration utile commentée*/
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
+
+
+/*Commentaire*/
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1 {
+  color: #3D9C4E;
+}
+
+/*Include*/
+.highlight .cp {
+  color: #5C5C5B;
+}
+
+/*Mots clés using virtual return class etc...*/
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kr, .highlight .kv {
+  color: #5C5C5B;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/*Type int etc...*/
+.highlight .kt {
+  color: #4090C4;
+}
+
+/*Opérateurs + :*/
+.highlight .o {
+  color: #A4A8A7;
+}
+
+/*Nom de la classe*/
+.highlight .nc {
+  color: #0A9383;
+  font-weight: bold;
+}
+
+/*String*/
+.highlight .s {
+    color: #2B5034; 
+}
+
+/*Nom de fonction*/
+.highlight .nf {
+  color: #0059FF;
+  font-weight: bold;
+}
+
+/*Nombre entier, double*/
+.highlight .mi, .highlight .il, .highlight .mf {
+  color: #2B3CD4;
+}
+
+/*nullptr*/
+.highlight .nb, .highlight .bp {
+  color: #3B9E47;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Autres langages ou types de données pas encore utilisés*/
 .highlight, .highlight .w {
   color: #bbbbbb;
   background-color: #000;
 }
-.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1 {
-  color: #888;
-}
-.highlight .cp {
-  color: #579;
-}
 .highlight .cs {
-  color: #cc0000;
-  font-weight: bold;
-}
-.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kr, .highlight .kv {
-  color: #9973D8;
+  color: #FF0000;
   font-weight: bold;
 }
 .highlight .kp {
   color: #038;
 }
-.highlight .kt {
-  color: #339;
-}
-.highlight .o {
-  color: #FF5900;
-}
 .highlight .ow {
   color: #000;
-  font-weight: bold;
-}
-.highlight .nb, .highlight .bp {
-  color: #007020;
-}
-.highlight .nf {
-  color: #06B;
-  font-weight: bold;
-}
-.highlight .nc {
-  color: #B06;
   font-weight: bold;
 }
 .highlight .nn {
@@ -609,14 +640,6 @@ pre {
   color: #D20;
 }
 .highlight .m, .highlight .mb, .highlight .mx {
-  color: #60E;
-  font-weight: bold;
-}
-.highlight .mi, .highlight .il {
-  color: #00F;
-  font-weight: bold;
-}
-.highlight .mf {
   color: #60E;
   font-weight: bold;
 }
