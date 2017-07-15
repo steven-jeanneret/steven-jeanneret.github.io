@@ -2,7 +2,7 @@
 layout: post
 title:  "Modification du thème Sublime Text 3"
 date:   2017-07-14 19:50:00 +0200
-categories: "sublime-text-3"
+category: "sublime-text-3"
 ---
 
 ```xml

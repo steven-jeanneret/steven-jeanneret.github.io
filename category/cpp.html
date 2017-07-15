@@ -1,11 +1,11 @@
 ---
 layout: default
-categories: jekyll
+category: cpp
 ---
 <div class="page-content">
-	<div class="wrapper">
-		 {% for category in site.categories %}
-		 {% if category contains 'jekyll' %}
+    <div class="wrapper">
+         {% for category in site.categories %}
+         {% if category contains 'cpp' %}
         {% capture cat %}{{ category | first }}{% endcapture %}
 
         <h4>{{ cat }}</h4>
@@ -19,5 +19,5 @@ categories: jekyll
             </ul>
 {% endif %}
 {% endfor %}
-	</div>
+    </div>
 </div>

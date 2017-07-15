@@ -25,9 +25,9 @@
     
     <a class="site-title" href="/">Home</a>
     <p class="site-title">&nbsp;/ &nbsp;</p>
-    {% unless p.categories == empty %}
-    {% for categories in page.categories %}
-    <a class="site-title" href="/categories/{{categories}}">{{ categories }}</a>
+    {% unless p.category == empty %}
+    {% for category in page.category %}
+    <a class="site-title" href="/categories/{{category}}">{{ category }}</a>
     {% endfor %}
     {% endunless %}
       <nav class="site-nav">
@@ -44,13 +44,11 @@
         <div class="trigger">
             <a class="page-link" href="/about/">About</a>
         </div>
-         <div id="search">
-             <form role="search" method="get" action="{{ site.baseurl }}/search">
-                 <input id="searchString" name="searchString"
-                        placeholder="Be a Better Developer, etc." type="text">
-                 <input id="searchButton" name="googleSearchName" type="submit" value="Search">
-             </form>
-         </div>
+         <form action="/search.html" method="get">
+          <label for="search_box">Search</label>
+          <input type="text" id="search_box" name="query">
+          <input type="submit" value="search">
+        </form>
       </nav>
     
   </div>

@@ -2,7 +2,7 @@
 layout: post
 title:  "Use the font Courier Prime on Jekyll"
 date:   2017-07-15 14:34:00 +0200
-categories: jekyll
+category: jekyll
 ---
 # Prerequisites
 [Installation of Courier Prime on Ubuntu](/linux/2017/07/15/install-font-courier-prime.html)

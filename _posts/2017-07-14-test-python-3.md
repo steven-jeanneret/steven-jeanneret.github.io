@@ -2,7 +2,7 @@
 layout: post
 title:  "Test pour la coloration syntaxique python"
 date:   2017-07-14 22:25:00 +0200
-categories: python
+category: python
 ---
 
 # Test pour la coloration syntaxique en Python

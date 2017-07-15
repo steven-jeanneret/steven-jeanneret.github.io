@@ -2,7 +2,7 @@
 layout: post
 title:  "Configure git to save credential"
 date:   2017-07-13 15:45:00 +0200
-categories: git
+category: git
 ---
 # Save credential in git
 Add this line in your terminal

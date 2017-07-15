@@ -2,7 +2,7 @@
 layout: post
 title:  "Extract a rar on Ubuntu"
 date:   2017-07-15 14:14:00 +0200
-categories: linux
+category: linux
 ---
 # To extrat a .rar on Ubuntu we need :
 ## Install unrar-free & rar
