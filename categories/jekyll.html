@@ -8,7 +8,7 @@ categories: jekyll
 		 {% if category contains 'jekyll' %}
         {% capture cat %}{{ category | first }}{% endcapture %}
 
-        <h4>{{ cat | capitalize }}</h4>
+        <h4>{{ cat }}</h4>
             <ul>
             {% for post in site.categories[cat] %}
             <li>
