@@ -1,10 +1,14 @@
-{% include header-home.html %}
+---
+layout: default
+categories: python
+---
 <div class="page-content">
 	<div class="wrapper">
 		 {% for category in site.categories %}
+		 {% if category contains 'python' %}
         {% capture cat %}{{ category | first }}{% endcapture %}
 
-        <h4><a href="/categories/{{cat}}">{{ cat}}</a></h4>
+        <h4>{{ cat | capitalize }}</h4>
             <ul>
             {% for post in site.categories[cat] %}
             <li>
@@ -13,8 +17,7 @@
             </li>
             {% endfor %}
             </ul>
-
+{% endif %}
 {% endfor %}
 	</div>
 </div>
-{% include footer.html %}

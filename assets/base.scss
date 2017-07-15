@@ -74,10 +74,15 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #2a7ae2;
-  text-decoration: none; }
+  /*color: #2a7ae2;*/
+  text-decoration: none;
+  color: #4090C4;
+  font-style: italic;
+}
   a:visited {
-    color: #1756a9; }
+    color: #324ACD;
+
+  }
   a:hover {
     color: #111;
     text-decoration: underline; }
@@ -88,7 +93,7 @@ a {
 
 /**
  * Blockquotes
- */
+ 
 blockquote {
   color: #828282;
   border-left: 4px solid #e8e8e8;
@@ -114,7 +119,7 @@ code {
   color :  white; 
   /*Adding font for the code*/
   @import url("CourierPrime");
-  font-family: "Courier Prime", "Times New Roman";
+  font-family: "Courier Prime", "Courier New";
 }
 
 pre {
@@ -358,7 +363,7 @@ pre {
     font-style: italic; }
   .highlight .err {
     color: #a61717;
-    background-color: #e3d2d2; }
+    /*background-color: #000;*/ }
   .highlight .k {
     font-weight: bold; }
   .highlight .o {
@@ -415,8 +420,6 @@ pre {
   .highlight .kt {
     color: #458;
     font-weight: bold; }
-  .highlight .m {
-    color: #099; }
   
   .highlight .na {
     color: #008080; }
@@ -471,8 +474,6 @@ pre {
     color: #d14; }
   .highlight .sr {
     color: #009926; }
-  .highlight .s1 {
-    color: #d14; }
   .highlight .ss {
     color: #990073; }
   .highlight .bp {
@@ -498,6 +499,7 @@ pre {
 .highlight table pre { margin: 0; }
 
 
+/*Partie programmation*/
 /*Commentaire*/
 .highlight .c, .highlight .cd, .highlight .cm, .highlight .c1 {
   color: #3D9C4E;
@@ -555,14 +557,40 @@ pre {
 
 
 
+/*Partie CSS*/
+/*Selector*/
+.highlight .nt {
+  color: #0A9383;
+  font-weight: bold;
+}
 
+/*Attribut*/
+.highlight .nl {
+  color: #5C5C5B;
+  font-weight: bold;
+  font-style: italic;
+}
 
+/*Valeur taille*/
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #52CBA2;
+}
 
+/*Valeur couleur*/
+.highlight .no {
+  color: #324ACD;
+}
 
+/*@Import...*/
+.highlight .err {
+  color: #F00;
+  /*background-color: #000;*/
+}
 
-
-
-
+/*String*/
+.highlight .s1 {
+    color: #2B5034; 
+}
 
 
 
@@ -603,23 +631,14 @@ pre {
   color: #d70;
   font-weight: bold;
 }
-.highlight .no {
-  color: #036;
-  font-weight: bold;
-}
-.highlight .nl {
-  color: #970;
-  font-weight: bold;
-}
+
+
 .highlight .ni {
   color: #800;
   font-weight: bold;
 }
 .highlight .na {
   color: #00C;
-}
-.highlight .nt {
-  color: #070;
 }
 .highlight .nd {
   color: #555;
@@ -647,10 +666,6 @@ pre {
 }
 .highlight .sx {
   color: #D20;
-}
-.highlight .m, .highlight .mb, .highlight .mx {
-  color: #60E;
-  font-weight: bold;
 }
 .highlight .mh {
   color: #058;
@@ -693,7 +708,4 @@ pre {
 .highlight .gt {
   color: #04D;
 }
-.highlight .err {
-  color: #F00;
-  background-color: #FAA;
-}
+
