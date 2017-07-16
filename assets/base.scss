@@ -24,7 +24,7 @@ body {
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
   font-kerning: normal; 
-  width : 80%;
+  width : 800px;
   margin-left : auto;
   margin-right : auto;
    }
@@ -249,7 +249,12 @@ pre {
       #search_button {
         position: relative;
         top: -54px;
-        left: 330px;
+        left: 95%;
+      }
+
+      #search_box {
+        position: relative;
+        left: 2%;
       }
 
 /**
@@ -720,9 +725,4 @@ pre {
 }
 .highlight .gt {
   color: #04D;
-}
-
-#search_box {
-  position: relative;
-  left: 10px;
 }
