@@ -140,12 +140,12 @@ pre {
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px; }
-  @media screen and (max-width: 800px) {
+ /* @media screen and (max-width: 800px) {
     .wrapper {
       max-width: -webkit-calc(800px - (30px));
       max-width: calc(800px - (30px));
       padding-right: 15px;
-      padding-left: 15px; } }
+      padding-left: 15px; } }*/
 
 /**
  * Clearfix
@@ -200,7 +200,7 @@ pre {
     line-height: 1.5; }
     .site-nav .page-link:not(:last-child) {
       margin-right: 20px; }
-  @media screen and (max-width: 600px) {
+  /*@media screen and (max-width: 600px) {
     .site-nav {
       position: absolute;
       top: 9px;
@@ -240,7 +240,7 @@ pre {
         padding: 5px 10px;
         margin-left: 20px; }
         .site-nav .page-link:not(:last-child) {
-          margin-right: 0; } }
+          margin-right: 0; } }*/
       .trigger {
         position: relative;
         left: -50px;
@@ -290,7 +290,7 @@ pre {
   width: -webkit-calc(45% - (30px / 2));
   width: calc(45% - (30px / 2)); }
 
-@media screen and (max-width: 800px) {
+/*@media screen and (max-width: 800px) {
   .footer-col-1,
   .footer-col-2 {
     width: -webkit-calc(50% - (30px / 2));
@@ -303,7 +303,7 @@ pre {
   .footer-col {
     float: none;
     width: -webkit-calc(100% - (30px / 2));
-    width: calc(100% - (30px / 2)); } }
+    width: calc(100% - (30px / 2)); } }*/
 /**
  * Page content
  */
@@ -337,27 +337,27 @@ pre {
   font-size: 42px;
   letter-spacing: -1px;
   line-height: 1; }
-  @media screen and (max-width: 800px) {
+ /* @media screen and (max-width: 800px) {
     .post-title {
-      font-size: 36px; } }
+      font-size: 36px; } }*/
 
 .post-content {
   margin-bottom: 30px; }
   .post-content h2 {
     font-size: 32px; }
-    @media screen and (max-width: 800px) {
+    /*@media screen and (max-width: 800px) {
       .post-content h2 {
-        font-size: 28px; } }
+        font-size: 28px; } }*/
   .post-content h3 {
     font-size: 26px; }
-    @media screen and (max-width: 800px) {
+   /* @media screen and (max-width: 800px) {
       .post-content h3 {
-        font-size: 22px; } }
+        font-size: 22px; } }*/
   .post-content h4 {
     font-size: 20px; }
-    @media screen and (max-width: 800px) {
+   /* @media screen and (max-width: 800px) {
       .post-content h4 {
-        font-size: 18px; } }
+        font-size: 18px; } }*/
 
 /**
  * Syntax highlighting styles
