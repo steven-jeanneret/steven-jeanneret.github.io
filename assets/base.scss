@@ -228,16 +228,29 @@ pre {
           fill: #424242; }
       .site-nav input ~ .trigger {
         clear: both;
-        display: none; }
+        display: none;
+
+      }
       .site-nav input:checked ~ .trigger {
         display: block;
-        padding-bottom: 5px; }
+        padding-bottom: 5px; 
+      }
       .site-nav .page-link {
         display: block;
         padding: 5px 10px;
         margin-left: 20px; }
         .site-nav .page-link:not(:last-child) {
           margin-right: 0; } }
+      .trigger {
+        position: relative;
+        left: -50px;
+      }
+
+      #search_button {
+        position: relative;
+        top: -54px;
+        left: 330px;
+      }
 
 /**
  * Site footer

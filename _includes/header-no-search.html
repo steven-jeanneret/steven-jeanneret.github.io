@@ -23,9 +23,13 @@
   <div class="wrapper">
     
     
-    <a class="site-title" href="/">Documentation de Steven</a>
-  
-    
+    <a class="site-title" href="/">Home</a>
+    <p class="site-title">&nbsp;/ &nbsp;</p>
+    {% unless p.category == empty %}
+    {% for category in page.category %}
+    <a class="site-title" href="/search?query={{category}}">{{ category }}</a>
+    {% endfor %}
+    {% endunless %}
       <nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
