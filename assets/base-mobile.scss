@@ -17,7 +17,7 @@ dl, dd, ol, ul, figure {
 body {
   font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #111;
-  background-color: #ffffff;
+  background-color: #000;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -31,13 +31,12 @@ body {
   margin-right : auto;
   padding-left: auto;
   padding-right: auto;
-  overflow-x: auto;
 }
-/*@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
   body {
     font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #111;
-    background-color: #ffffff;
+    background-color: #000000;
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
@@ -53,7 +52,7 @@ body {
     padding-right: auto;
     overflow-x: hidden;
   }
-}/*
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -207,7 +206,7 @@ pre {
   min-height: 55.95px;
   position: relative; 
 }
-/*@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .site-header {
     border-top: 5px solid #424242;
     border-bottom: 1px solid #e8e8e8;
@@ -215,7 +214,7 @@ pre {
     position: relative;
   }
 }
-*/
+
 .site-title {
   font-size: 26px;
   font-weight: 300;
@@ -233,7 +232,7 @@ pre {
   position: absolute;
   left: 430px;
 }
-/*@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .site-nav {
     float: right;
     line-height: 54px;
@@ -241,7 +240,7 @@ pre {
     position: absolute;
     left: 370px;
   }
-}*/
+}
   .site-nav .nav-trigger {
     display: none; }
   .site-nav .menu-icon {
@@ -298,18 +297,18 @@ pre {
       }
 */
 
-      /*@media screen and (max-width: 800px) {
+      @media screen and (max-width: 800px) {
         .trigger {
           position: absolute;
           top: 40px;
           right: 107%;
           height: 50px;
-          /*width: 300px;
+          /*width: 300px;*/
           width: 80%;
           text-align: right;
         }
       }
-*/
+
 
       #search_button {
         position: relative;
@@ -362,7 +361,7 @@ pre {
   width: calc(45% - (30px / 2)); 
 }
 
-/*@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .footer-col-1,
   .footer-col-2 {
     width: -webkit-calc(50% - (30px / 2));
@@ -376,7 +375,7 @@ pre {
     float: none;
     width: -webkit-calc(100% - (30px / 2));
     width: calc(100% - (30px / 2)); } }
-*//**
+/**
  * Page content
  */
 .page-content {
@@ -447,11 +446,11 @@ pre {
 /*    @import url("CourierPrime");
     font-family: "Courier Prime", "Times New Roman";*/
   }
-  /*@media screen and (max-width: 800px) {
+  @media screen and (max-width: 800px) {
     .highlighter-rouge {
       width:96%;
     }
-  }*/
+  }
   .highlight .c {
     color: #998;
     font-style: italic; }
