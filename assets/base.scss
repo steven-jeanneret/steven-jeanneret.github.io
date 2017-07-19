@@ -30,7 +30,26 @@ body {
   margin-right : auto;
   padding-left: auto;
   padding-right: auto;
-   }
+}
+@media screen and (max-width: 800px) {
+  body {
+    font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #111;
+    background-color: #ffffff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal; 
+    width : 100%;
+    max-width: 100%;
+    margin-left : auto;
+    margin-right : auto;
+    padding-left: auto;
+    padding-right: auto;
+  }
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -179,7 +198,16 @@ pre {
   border-top: 5px solid #424242;
   border-bottom: 1px solid #e8e8e8;
   min-height: 55.95px;
-  position: relative; }
+  position: relative; 
+}
+@media screen and (max-width: 600px) {
+  .site-header {
+    border-top: 5px solid #424242;
+    border-bottom: 1px solid #e8e8e8;
+    min-height: 90px;
+    position: relative;
+  }
+}
 
 .site-title {
   font-size: 26px;
@@ -253,6 +281,18 @@ pre {
         left: -15%;
       }
 */
+
+      @media screen and (max-width: 800px) {
+        .trigger {
+          position: absolute;
+          top: 40px;
+          right: 102%;
+          height: 50px;
+          width: 250px;
+        }
+      }
+
+
       #search_button {
         position: relative;
         left: 10px;
@@ -263,10 +303,9 @@ pre {
         position: relative;
         left: 5px;
       }
-
 /**
  * Site footer
- */
+ 
 .site-footer {
   border-top: 1px solid #e8e8e8;
   padding: 30px 0; }
