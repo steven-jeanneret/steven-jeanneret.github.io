@@ -13,3 +13,7 @@ category: linux
 ```bash
 tar cvpzf backup.tgz --exclude=/proc --exclude=/lost+found --exclude=/backup.tgz --exclude=/mnt --exclude=/sys --exclude=/media --exclude=~/Videos  /
 ```
+## Then we just have to move the backup to an external disk
+```bash
+ sudo cp /backup.tgz /media/steven/Elements/
+ ```
