@@ -11,7 +11,7 @@ category: linux
  ``` 
 ## Here we could start the backup
 ```bash
-tar cvpzf backup.tgz --exclude=/proc --exclude=/lost+found --exclude=/backup.tgz --exclude=/mnt --exclude=/sys --exclude=/media --exclude=~/Videos  /
+tar cvpzf /backup.tgz --exclude=/proc --exclude=/lost+found --exclude=/backup.tgz --exclude=/mnt --exclude=/sys --exclude=/media --exclude=~/Videos  /
 ```
 ## Then we just have to move the backup to an external disk
 ```bash
