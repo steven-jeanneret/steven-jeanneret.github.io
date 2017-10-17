@@ -148,10 +148,9 @@ category: "sublime-text-3"
 			<dict>
 				<key>foreground</key>
 				<!-- Mots clés virtual return class -->
-				<string>#5C5C5B</string>
+				<string>#606060</string>
 				<key>fontStyle</key>
-				<string>italic</string>
-				
+				<string>italic.bold</string>
 			</dict>
 		</dict>
 		<dict>
@@ -175,7 +174,9 @@ category: "sublime-text-3"
 			<dict>
 				<key>foreground</key>
 				<!-- Balises? -->
-				<string>#d75a64</string>
+				<string>#324ACD</string>
+				<key>fontStyle</key>
+				<string>italic</string>
 			</dict>
 		</dict>
 		<dict>
@@ -495,7 +496,7 @@ category: "sublime-text-3"
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#f0c674</string>
+				<string>#777777</string>
 			</dict>
 		</dict>
 		<dict>

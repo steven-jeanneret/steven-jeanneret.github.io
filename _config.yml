@@ -27,7 +27,7 @@ markdown: kramdown
 highlighter: rouge
 
 theme: minima
-plugins:
+plugins_dir:
   - jekyll-feed
 
 # Exclude from processing.
