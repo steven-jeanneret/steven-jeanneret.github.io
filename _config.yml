@@ -22,13 +22,18 @@ url: "http://steven-jeanneret.github.io" # the base hostname & protocol for your
 twitter_username: JeanneretSteven
 github_username:  steven-jeanneret
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
+
 
 theme: minima
 plugins_dir:
   - jekyll-feed
+
+# Build settings
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
