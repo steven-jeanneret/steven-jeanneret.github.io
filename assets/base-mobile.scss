@@ -30,8 +30,8 @@ body {
   min-width: 100%;
   margin-left : auto;
   margin-right : auto;
-  padding-left: auto;
-  padding-right: auto;
+  padding-left: 2%;
+  padding-right: 2%;
   overflow-x: hidden;
 }
 
@@ -568,7 +568,7 @@ pre > code {
 
 /*Opérateurs + :*/
 .highlight .o {
-  color: #A4A8A7;
+  color: #5C5C5B;
 }
 
 /*Nom de la classe*/
@@ -583,7 +583,7 @@ pre > code {
 }
 
 /*Nom de fonction*/
-.highlight .nf {
+.highlight .nf, .highlight .na{
   color: #324ACD;
   font-weight: bold;
 }
@@ -677,9 +677,6 @@ pre > code {
 .highlight .ni {
   color: #800;
   font-weight: bold;
-}
-.highlight .na {
-  color: #00C;
 }
 .highlight .nd {
   color: #555;
