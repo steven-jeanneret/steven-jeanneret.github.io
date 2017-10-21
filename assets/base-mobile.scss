@@ -27,7 +27,7 @@ body {
   font-kerning: normal; 
   width : 100%;
   max-width: 100%;
-  min-width: 90%;//modif
+  min-width: 100%;
   margin-left : auto;
   margin-right : auto;
   padding-left: auto;
@@ -124,13 +124,13 @@ blockquote {
 pre,
 code {
   font-size: 15px;
-  /*border: 1px solid #e8e8e8;
-  border-radius: 3px;*/
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
   width: 90%;
 }
 
 code { 
-  /*padding: 1px 5px;*/
+  padding: 1px 5px;
   color :  white; 
   /*Adding font for the code*/
   @import url("CourierPrime");
@@ -142,13 +142,13 @@ code {
 }
 
 pre {
-  /*padding: 8px 12px;*/
+  padding: 8px 12px;
   width: 90%;
 }
 pre > code {
-  /*border: 0;
+  border: 0;
   padding-right: 0;
-  padding-left: 0; */
+  padding-left: 0;
   width: 90%;
 }
 
@@ -347,7 +347,7 @@ pre > code {
 }
 	/*Background du code*/
 .highlighter-rouge {
-  width:96%;
+  width:90%;
 }
 .highlight .c {
   color: #998;
