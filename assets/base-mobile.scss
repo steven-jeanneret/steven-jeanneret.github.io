@@ -347,6 +347,10 @@ pre > code {
 }
 	/*Background du code*/
 .highlighter-rouge {
+  padding-left: auto;
+  padding-right: auto;
+  margin-left: auto;
+  margin-right: auto;
   width:90%;
 }
 .highlight .c {
