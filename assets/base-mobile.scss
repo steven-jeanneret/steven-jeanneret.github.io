@@ -27,7 +27,7 @@ body {
   font-kerning: normal; 
   width : 100%;
   max-width: 100%;
-  min-width: 90%;
+  min-width: 90%;//modif
   margin-left : auto;
   margin-right : auto;
   padding-left: auto;
@@ -126,6 +126,7 @@ code {
   font-size: 15px;
   /*border: 1px solid #e8e8e8;
   border-radius: 3px;*/
+  width: 90%;
 }
 
 code { 
@@ -137,10 +138,12 @@ code {
   word-wrap: break-word;      /* IE 5.5-7 */
   white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
   white-space: pre-wrap;      /* current browsers */
+  width: 90%;
 }
 
 pre {
   /*padding: 8px 12px;*/
+  width: 90%;
 }
 pre > code {
   /*border: 0;
