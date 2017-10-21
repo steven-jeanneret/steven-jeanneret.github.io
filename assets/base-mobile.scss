@@ -129,13 +129,8 @@ code {
 }
 
 code {
-  /*padding: 1px 5px;*/
-  width: 90%;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  color :  black; 
+  padding: 1px 5px;
+  color :  white; 
   /*Adding font for the code*/
   @import url("CourierPrime");
   font-family: "Courier Prime", "Courier New";
@@ -149,8 +144,8 @@ pre {
 }
 pre > code {
   border: 0;
-  /*padding-right: 0;
-  padding-left: 0; */
+  padding-right: 0;
+  padding-left: 0; 
 }
 
 /**
