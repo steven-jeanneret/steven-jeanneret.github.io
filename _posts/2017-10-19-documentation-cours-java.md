@@ -83,7 +83,6 @@ int size = tab.length; //Taille du tableau
 
 ### Affichage
 ```java
-test
 for(int i = 0; i < tab.length; i++) {
 	System.out.println(tab[i]);
 }
