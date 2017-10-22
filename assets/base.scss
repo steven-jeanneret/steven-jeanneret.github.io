@@ -2,29 +2,49 @@
 ---
 
 @font-face {
-font-family: 'CourierPrime';
-src: url('courierprime.ttf') format('truetype');
+font-family: 'courierprime';
+src: url('courierprime.eot');
+    src: url('courierprime.eot?#iefix') format('embedded-opentype'),
+         url('courierprime.woff2') format('woff2'),
+         url('courierprime.woff') format('woff'),
+         url('courierprime.ttf') format('truetype'),
+         url('courierprime.svg#courierprime') format('svg');
 font-weight: normal;
 font-style: normal;
 }
 
 @font-face {
 font-family: 'CourierPrime';
-src: url('courierprimebold.ttf') format('truetype');
+src: url('courierprimebold.eot');
+    src: url('courierprimebold.eot?#iefix') format('embedded-opentype'),
+         url('courierprimebold.woff2') format('woff2'),
+         url('courierprimebold.woff') format('woff'),
+         url('courierprimebold.ttf') format('truetype'),
+         url('courierprimebold.svg#courierprime') format('svg');
 font-weight: bold;
 font-style: normal;
 }
 
 @font-face {
 font-family: 'CourierPrime';
-src: url('courierprimebolditalic.ttf') format('truetype');
+src: url('courierprimebolditalic.eot');
+    src: url('courierprimebolditalic.eot?#iefix') format('embedded-opentype'),
+         url('courierprimebolditalic.woff2') format('woff2'),
+         url('courierprimebolditalic.woff') format('woff'),
+         url('courierprimebolditalic.ttf') format('truetype'),
+         url('courierprimebolditalic.svg#courierprime') format('svg');
 font-weight: bold;
 font-style: italic;
 }
 
 @font-face {
 font-family: 'CourierPrime';
-src: url('courierprimeitalic.ttf') format('truetype');
+src: url('courierprimeitalic.eot');
+    src: url('courierprimeitalic.eot?#iefix') format('embedded-opentype'),
+         url('courierprimeitalic.woff2') format('woff2'),
+         url('courierprimeitalic.woff') format('woff'),
+         url('courierprimeitalic.ttf') format('truetype'),
+         url('courierprimeitalic.svg#courierprime') format('svg');
 font-weight: normal;
 font-style: italic;
 }
@@ -168,7 +188,7 @@ code {
   color :  white; 
   /*Adding font for the code*/
   /*@import url("CourierPrime");*/
-  font-family: 'Courier Prime';
+  font-family: 'courierprime';
   word-wrap: break-word;      /* IE 5.5-7 */
   white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
   white-space: pre-wrap;      /* current browsers */
