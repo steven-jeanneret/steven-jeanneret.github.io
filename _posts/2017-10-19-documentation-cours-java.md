@@ -51,6 +51,8 @@ int nbLance = Integer.MAX_VALUE/100;
 ```
 *Permet d'obtenir un nombre sans dépasser la valeur max du type!*
 
+.toString() //automatique pour un affichage
+
 # Théorie
 Package : c'est un dossier qui permet l'unicité
 Tous les objets sont créer avec **new** donc ils sont sur le tas,
@@ -71,6 +73,30 @@ Java même type que C++ sauf les unsigned !
 **Interface** liste de méthodes publiques non-statiques non-implémentés
 
 # Container
+## Tableau
+### Initialisation
+```java
+int[] tab = { 1, 2, 3 }; //Méthode rapide pour créer un tableau
+double[] tab = new double[] { 1, 2, 3 };
+double[] tab = new double[3]; //Si on connait pas les valeurs
+int size = tab.length; //Taille du tableau
+```
+
+### Affichage
+```java
+for(int i = 0; i < tab.length; i++) {
+	System.out.println(tab[i]);
+}
+
+for(double valeur:tab) {
+	System.out.println(valeur);
+}
+
+System.out.println(Arrays.toString(tab)); //Utilisation de la classe 
+```
+[La classe Arrays](#Classe)
+
+
 ## Liste
 ### LinkedList
 rapide pour ajouter ou supprimer des éléments
@@ -142,15 +168,36 @@ n facultatif, sert d'optimisation
 
 > Un wrapper est une classe qui encapsule le type
 
-| **Type**		| **Wrapper**	|
-| double 		| double 		|
-| long			| Long 			|
-| float			| Float 		|
-| int 			| Integer		|
-| char 			| Character		|
+**Type** | **Wrapper**
+--- | ---
+double | double
+long | Long
+float | Float
+int | Integer
+char | Character
+
+## Itérateur
+> Peut servir au parcours d'une liste
+
+```java
+Iterator<Double> it = list.iterator();
+while(it.hasNext()) {
+	double element = it.next(); //unboxing automatique Double->double
+	System.out.println(element);
+}
+
+```
+
+Conversion de wrapper avec les itérateurs
+```java
+double y = ity.next().doubleValue();
+Double y = ity.next();
+double y = ity.next(); //Le compilateur fait la conversion objet -> type simple
+```
+
 
 ## Enum
-<span style="color:red">a verifier</span>
+<span style="color:red">à vérifier</span>
 
 Un enum type est une donnée spécial qui permet de définir une variable à certaines valeurs spécifiés.
 
@@ -163,6 +210,11 @@ public enum Day {
 Day d1 = Day.MONDAY;
 ```
 
+## Classe incontournable
+# Classe
+La classe **Arrays** permet de convertir un tableau en string
+System.out.println(Arrays.toString(tab));
+String
 
 
 
@@ -170,19 +222,6 @@ Day d1 = Day.MONDAY;
 
 # A trier!
 
-## Iterateur
-double y = ity.next().doubleValue();
-Double y = ity.next(); //Le compilateur fait le travail de conversion objet -> type simple
-double y = ity.next(); //Le compilateur fait le travail
-
-.toString() //automatique pour un affichage
-
-
-## Classe incontournable
-String
-Arrays => System.out.println(Arrays.toString(tab));
-
-int[] tab = { 1, 2, 3 }; //Méthode rapide pour créer un tableau
 
 Garbage collector
 Java tous est références
