@@ -3,29 +3,29 @@
 
 
 @font-face {
-font-family: "CourierPrime";
-src: url("/assets/courierprime.ttf") format('truetype');
+font-family: 'CourierPrime';
+src: url('/assets/courierprime.ttf') format('truetype');
 font-weight: normal;
 font-style: normal;
 }
 
 @font-face {
-font-family: "CourierPrime";
-src: url("/assets/courierprimebold.ttf") format('truetype');
+font-family: 'CourierPrime';
+src: url('/assets/courierprimebold.ttf') format('truetype');
 font-weight: bold;
 font-style: normal;
 }
 
 @font-face {
-font-family: "CourierPrime";
-src: url("/assets/courierprimebolditalic.ttf") format('truetype');
+font-family: 'CourierPrime';
+src: url('/assets/courierprimebolditalic.ttf') format('truetype');
 font-weight: bold;
 font-style: italic;
 }
 
 @font-face {
-font-family: "CourierPrime";
-src: url("/assets/courierprimeitalic.ttf") format('truetype');
+font-family: 'CourierPrime';
+src: url('/assets/courierprimeitalic.ttf') format('truetype');
 font-weight: normal;
 font-style: italic;
 }
@@ -163,7 +163,7 @@ code {
   color :  white; 
   /*Adding font for the code*/
   /*@import url("CourierPrime");*/
-  font-family: "Courier Prime", "Courier New";
+  font-family: 'Courier Prime';
   word-wrap: break-word;      /* IE 5.5-7 */
   white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
   white-space: pre-wrap;      /* current browsers */
