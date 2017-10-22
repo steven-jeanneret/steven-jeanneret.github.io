@@ -8,7 +8,6 @@ category: java
 ```bash
 git clone ssh://java@157.26.83.27/home/java/git/WCoursJava.git
 ```
-Password : ***h2o2017***
 
 ## 2 ème semaine
 créer java2
@@ -84,7 +83,6 @@ int size = tab.length; //Taille du tableau
 
 ### Affichage
 ```java
-test
 for(int i = 0; i < tab.length; i++) {
 	System.out.println(tab[i]);
 }
