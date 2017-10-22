@@ -161,8 +161,6 @@ n facultatif, sert d'optimisation
 >
 > Non on ne peut garantir l'unicité des valeurs
 
-
-
 ## Wrapper
 
 > Un wrapper est une classe qui encapsule le type
@@ -193,7 +191,6 @@ double y = ity.next().doubleValue();
 Double y = ity.next();
 double y = ity.next(); //Le compilateur fait la conversion objet -> type simple
 ```
-
 
 ## Enum
 <span style="color:red">à vérifier</span>
