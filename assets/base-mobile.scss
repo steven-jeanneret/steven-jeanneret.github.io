@@ -1,6 +1,34 @@
 ---
 ---
 
+@font-face {
+font-family: "CourierPrime";
+src: url("assets/CourierPrime.ttf");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: "CourierPrime";
+src: url("assets/CourierPrimeBold.ttf");
+font-weight: bold;
+font-style: normal;
+}
+
+@font-face {
+font-family: "CourierPrime";
+src: url("assets/CourierPrimeBoldItalic.ttf");
+font-weight: bold;
+font-style: italic;
+}
+
+@font-face {
+font-family: "CourierPrime";
+src: url("assets/CourierPrimeItalic.ttf");
+font-weight: normal;
+font-style: italic;
+}
+
 /**
  * Reset some basic elements
  */
@@ -106,7 +134,7 @@ a:hover {
 }
 
 /**
- * Blockquotes
+ * Blockquotes*/
  
 blockquote {
   color: #828282;
@@ -353,6 +381,11 @@ pre > code {
   margin-right: auto;
   width:90%;
 }
+
+.highlighter-rouge {
+  color: black;
+}
+
 .highlight .c {
   color: #998;
   font-style: italic; 

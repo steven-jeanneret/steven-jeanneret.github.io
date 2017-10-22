@@ -4,55 +4,54 @@ title:  "Documentation pour le cours de Java"
 date:   2017-10-19 21:34:00 +0200
 category: java
 ---
-# Note Java
-## Git
+# Git
 ```bash
 git clone ssh://java@157.26.83.27/home/java/git/WCoursJava.git
 ```
 Password : ***h2o2017***
 
-### 2 ème semaine
+## 2 ème semaine
 créer java2
 cloner dans java2
 travailler dans java2
 
-### 3 ème semaine
+## 3 ème semaine
 créer java3
 cloner dans java3
 travailler dans java3
 
 
-### Au projecteur
+## Au projecteur
 Sélectionner le projet du cours java 
 Raccourci commit dans eclipse (à droite de +)
 **CTRL + A** clic droit ajouter à l'index (tant que il y a qqch)
 Sélectionner le projet Push (à gauche de +)
 
-## Convention
+# Convention
 small **camelCase** pour les variables
 Big **CamelCase** pour les classes
 
-## Raccourci clavier
+# Raccourci clavier
 **ctrl + 7**  commente la/les lignes
 **ctrl + F11** lance le dernier programme
 **ctrl + shift + f** formate le code pour la convention White Smith
 **ctrl + shift + o** organise et purge les include
 **ctrl + shift + s** Sauvegarde tout et compile
 
-## Commentaire Java doc
+# Commentaire Java doc
 Commentaire java doc ```/**``` -> enter
 Pour le voir : *Window -> ShowView -> JavaDoc*
 
-## Utilitaires
+# Utilitaires
 *clic droit -> refactor -> rename* permet de changer le nom de l'objet dans tous le fichiers
 *double clic* sur un onglet pour le plein écran.
 kitebase *clic droit -> create -> new class*
 ```java
 int nbLance = Integer.MAX_VALUE/100;
 ```
-*//Permet d'obtenir un nombre sans dépasser la valeur max du type!*
+*Permet d'obtenir un nombre sans dépasser la valeur max du type!*
 
-## Théorie
+# Théorie
 Package : c'est un dossier qui permet l'unicité
 Tous les objets sont créer avec **new** donc ils sont sur le tas,
 Les pointeurs sont sur la pile,
@@ -71,15 +70,15 @@ Java même type que C++ sauf les unsigned !
 
 **Interface** liste de méthodes publiques non-statiques non-implémentés
 
-## Container
-### Liste
-**LinkedList**
+# Container
+## Liste
+### LinkedList
 rapide pour ajouter ou supprimer des éléments
 ```java
 List<Double> name = new LinkedList<Double>();
 ``` 
 
-**ArrayList**
+### ArrayList
 rapide pour parcourir les éléments
 ```java
 List<Double> name = new ArrayList<Double>();
@@ -99,7 +98,8 @@ list.remove(value);
 int nbElem = list.size();
 ```
 
-**Affichage**
+#### Affichage
+
 La plus pratique pour un affichage personnalisé :
 ```java
 for(double element:list)
@@ -114,36 +114,45 @@ System.out.println(list)
 ```
 
 ## Map, Dictionnaire
-Système de clé valeur
-**TreeMap**
+> Système de clé valeur
+
+### TreeMap
 ```java
 Map<String, Integer> name = new TreeMap<String, Integer>();
 ```
 On peut trier par clé, l'ordre est conservé
 
-**HashMap**
+### HashMap
 ```java
 Map<String, Integer> name = new HashMap<String, Integer>(n);
 ```
 Plus rapide mais l'ordre est incertain
+
 n facultatif, sert d'optimisation
 
-Entry<T1,T2>
+*Entry<T1,T2>*
 
-Peut on inverser Clé <=> valeur
-Non on ne peut pas garantir que valeur soit unique.
+> Peut on inverser Clé <=> valeur ?
+>
+> Non on ne peut garantir l'unicité des valeurs
+
+
 
 ## Wrapper
-wrapper de double : Double pour le type de la liste
-wrapper int : Integer
-wrapper char : Character
+> Un wrapper est une classe qui encapsule le type
+
+| **Type**		| **Wrapper**	|
+| double 		| double 		|
+| int 			| Integer		|
+| char 			| Character		|
 
 
 
 
 
 
-#A trier!
+
+# A trier!
 ENUM : //a chercher
 
 double y = ity.next().doubleValue();
