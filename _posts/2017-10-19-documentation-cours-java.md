@@ -139,13 +139,29 @@ n facultatif, sert d'optimisation
 
 
 ## Wrapper
+
 > Un wrapper est une classe qui encapsule le type
 
 | **Type**		| **Wrapper**	|
 | double 		| double 		|
+| long			| Long 			|
+| float			| Float 		|
 | int 			| Integer		|
 | char 			| Character		|
 
+## Enum
+<span style="color:red">a verifier</span>
+
+Un enum type est une donnée spécial qui permet de définir une variable à certaines valeurs spécifiés.
+
+```java
+public enum Day {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
+    THURSDAY, FRIDAY, SATURDAY 
+}
+
+Day d1 = Day.MONDAY;
+```
 
 
 
@@ -153,8 +169,8 @@ n facultatif, sert d'optimisation
 
 
 # A trier!
-ENUM : //a chercher
 
+## Iterateur
 double y = ity.next().doubleValue();
 Double y = ity.next(); //Le compilateur fait le travail de conversion objet -> type simple
 double y = ity.next(); //Le compilateur fait le travail
