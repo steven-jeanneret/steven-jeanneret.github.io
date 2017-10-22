@@ -38,7 +38,10 @@ Cell 3        | Cell 4
 ------------------------------------------ 
 			    Link
 ------------------------------------------
+inside link with anchor
+[click on this link](#my-multi-word-header)
 
+### My Multi Word Header
 
 [I'm an inline-style link](https://www.google.com)
 

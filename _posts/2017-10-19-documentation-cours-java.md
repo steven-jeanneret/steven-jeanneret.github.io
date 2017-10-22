@@ -92,9 +92,9 @@ for(double valeur:tab) {
 	System.out.println(valeur);
 }
 
-System.out.println(Arrays.toString(tab)); //Utilisation de la classe 
+System.out.println(Arrays.toString(tab));
 ```
-[La classe Arrays](#Classe)
+[La classe Arrays](#classe-incontournable)
 
 
 ## Liste
@@ -211,7 +211,6 @@ Day d1 = Day.MONDAY;
 ```
 
 ## Classe incontournable
-# Classe
 La classe **Arrays** permet de convertir un tableau en string
 System.out.println(Arrays.toString(tab));
 String
