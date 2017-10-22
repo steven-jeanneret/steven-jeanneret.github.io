@@ -1,30 +1,31 @@
 ---
 ---
 
+
 @font-face {
 font-family: "CourierPrime";
-src: url("/assets/courierprime.ttf");
+src: url("/assets/courierprime.ttf") format('truetype');
 font-weight: normal;
 font-style: normal;
 }
 
 @font-face {
 font-family: "CourierPrime";
-src: url("/assets/courierprimebold.ttf");
+src: url("/assets/courierprimebold.ttf") format('truetype');
 font-weight: bold;
 font-style: normal;
 }
 
 @font-face {
 font-family: "CourierPrime";
-src: url("/assets/courierprimebolditalic.ttf");
+src: url("/assets/courierprimebolditalic.ttf") format('truetype');
 font-weight: bold;
 font-style: italic;
 }
 
 @font-face {
 font-family: "CourierPrime";
-src: url("/assets/courierprimeitalic.ttf");
+src: url("/assets/courierprimeitalic.ttf") format('truetype');
 font-weight: normal;
 font-style: italic;
 }
