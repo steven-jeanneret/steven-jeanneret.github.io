@@ -52,6 +52,10 @@ int nbLance = Integer.MAX_VALUE/100;
 
 .toString() //automatique pour un affichage
 
+syserr -> System.err.println("Erreur"); //Permet d'envoyer un message d'erreurs (rouge)
+
+sysexit -> System.exit(-1); //Permet d'arrêter le code
+
 # Théorie
 Package : c'est un dossier qui permet l'unicité
 Tous les objets sont créer avec **new** donc ils sont sur le tas,
@@ -111,6 +115,7 @@ List<Double> name = new ArrayList<Double>();
 
 ArrayList on peut spécifier la taille pour gagner en performance mais pas nécessaire!
 ```
+List<Integer> list = Arrays.asList(1, 2, 3); //permet de créer rapidement une liste en 1 ligne
 List<Double> name = new ArrayList<Double>(n);
 ```
 
@@ -138,6 +143,25 @@ La plus rapide :
 System.out.println(list)
 ```
 
+## Set
+> Un set ne peut contenir qu'une fois la même valeur.
+
+```java
+Set<Double> set = new TreeSet<Double>();
+set.add(Math.PI);
+
+{//v1
+	for(Double element:set) {
+		System.out.println(element);
+	}
+}
+{//v3
+	System.out.println(set);
+}
+```
+
+
+
 ## Map, Dictionnaire
 > Système de clé valeur
 
@@ -155,13 +179,31 @@ Plus rapide mais l'ordre est incertain
 
 n facultatif, sert d'optimisation
 
+#### Insertion
+```java
+map.put("Personne" + i, i);
+```
+
+#### Affichage
+Set<Entry<String, Integer>> set = map.entrySet();
+for(Entry<String, Integer> entry:set) {
+	{
+		String clef = entry.getKey();
+		Integer valeur = entry.getValue();
+		System.out.println(clef + " = " + valeur);
+	}
+	{
+		System.out.println(entry); //Version plus courte
+	}
+}
+
 *Entry<T1,T2>*
 
 > Peut on inverser Clé <=> valeur ?
 >
 > Non on ne peut garantir l'unicité des valeurs
 
-## Wrapper
+# Wrapper
 
 > Un wrapper est une classe qui encapsule le type
 
@@ -173,7 +215,7 @@ float | Float
 int | Integer
 char | Character
 
-## Itérateur
+# Itérateur
 > Peut servir au parcours d'une liste
 
 ```java
@@ -192,7 +234,7 @@ Double y = ity.next();
 double y = ity.next(); //Le compilateur fait la conversion objet -> type simple
 ```
 
-## Enum
+# Enum
 <span style="color:red">à vérifier</span>
 
 Un enum type est une donnée spécial qui permet de définir une variable à certaines valeurs spécifiés.
@@ -206,53 +248,104 @@ public enum Day {
 Day d1 = Day.MONDAY;
 ```
 
-## Classe incontournable
-La classe **Arrays** permet de convertir un tableau en string
+# Classe incontournable
+## Arrays
+Permet par exemple de convertir un tableau en string
+```java
 System.out.println(Arrays.toString(tab));
-String
+```
 
+## Math
+Exemple d'arrondi supérieur
+```java
+Math.ceil(nbLancees / (double)nbSimulations)
+```
+
+## Random
+Exemple de nombre aléatoire entre 1 et size
+```java
+Random r = new Random(); 
+int value = r.nextInt(size) + 1;
+```
+
+## String
+
+# Canevas
+Les canevas servent à générer un bout de code.
+> mot clés => ctrl + espace
+
+Canevas | utilisation
+--- | ---
+cmain | code de base d'un main
+cmpu | ?
+cmpr | ? 
+cjunit | pour les tests unitaires
+
+# Importer un jar dans le Workspace
+> Copier le jar dans workspace -> PDeploy -> Deploy -> ext
+
+Puis dans la vue Package 
+> sélectionner PCoursJava -> Configure Build Path -> Add Library or Jars(chemin relatif) or External Jars (chemin absolu pas utilisé)
+
+# Assertion
+Utile pour le debug permet de localiser une erreur pour le développeur!
+Une assertion est une condition *true / false*, si elle est fausse, cause l'arrêt du programme.
+Importer de org.junit.Assert
+A mettre partout dans le code ou nécessaire
+
+Ici on s'assure que les 2 listes ai la même taille.
+```java
+Assert.assertTrue(list1.size()==list2.size());
+```
+
+# Test unitaire
+[Importer le jar](#importer-un-jar-dans-le-workspace)
+
+Utiliser le canevas cjunit dans une nouvelle classe.
+Le @Test permet de définir que la fonction qui suit est un test.
+Ici on vérifie que le résultat espéré est bien le résultats obtenu.
+```java
+@Test
+public void testLineaire1() {
+	int a = 12;
+	int b = 24;
+	double xEmpirique = Lineaire.solve(a, b);
+	double xTheorique = -2;
+	Assert.assertTrue(xEmpirique == xTheorique);
+}
+```
+> Clic droit => Run AS JUnit Test
+
+## Test unitaire du workspace
+<span style="color:red">à compléter</span>
+Pour exécuter tous les tests unitaires du workspace :
+> Dans les options de build ouvrir RunConfigurations
+Création d'un junit pour tous le workspace : fléche verte de compilation -> RunConfigurations -> New JUnit -> TestAll (ou autre nom) -> Run all tests... -> PCoursJava -> Run
+
+# Try Catch
+Sélection du bloc clic droit surround with -> try/catch
+
+```java
+try {
+	String[] tab = bloc.split("=");
+	double value = Double.valueOf(tab[1]);
+
+	mapABCValeurs.put(tab[0], value);
+}
+catch (NumberFormatException e) {
+	System.err.println("Mode d'emploi");
+	System.exit(-1); // 0 normal, -1 anormal
+}
+```
 
 
 
 
 # A trier!
-
-
 Garbage collector
 Java tous est références
 
-#Ajouter bout de codes pour chaque container et tous!
 
-#Canevas
-cmain
-cmpu
-cmpr
-cjunit
-
-# Test unitaire
-JUnit Test Case //Framework
-Télécharger les Jar => les copier dans workspace -> PDeploy -> Deploy -> ext
-Créer une classe avec le canevas cjunit
-Les @Test définisse que c'est un test JUnit
-
-On mets une ou plusieurs assertions puis clic droit => run as -> JUnit Test
-
-Création d'un junit pour tous le workspace : fléche verte de compilation -> RunConfigurations -> New JUnit -> TestAll (ou autre nom) -> Run all tests... -> PCoursJava -> Run
-
-# Assertion
-Importer de org.junit.Assert
-Utile pour le debug permet de trouver l'erreur pour le développeur!
-A mettre partout dans le code ou nécessaire
-# Jar dans le Workspace
-Copier les jar dans workspace -> PDeploy -> Deploy -> ext
-Puis dans Package sélectionner PCoursJava -> Configure Build Path -> Add Library or Jars(chemin relatif) or External Jars (chemin absolu pas utilisé)
-
-# Try Catch
-sélection du bloc clic droit surround with -> try/catch
-
-syserr -> System.err.println("Erreur"); //Permet d'envoyer un message d'erreurs (rouge)
-
-sysexit -> System.exit(-1); //Permet d'arrêter le code
 
 # Creer un jar
 Dans bin on zip .ch en paramètre et on spécifie standard (pas optimisé)
