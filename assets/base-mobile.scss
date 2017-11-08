@@ -1,55 +1,53 @@
 ---
 ---
 
-
 @font-face {
 font-family: 'courierprime';
-src: url('courierprime.eot');
-    src: url('courierprime.eot?#iefix') format('embedded-opentype'),
-         url('courierprime.woff2') format('woff2'),
-         url('courierprime.woff') format('woff'),
-         url('courierprime.ttf') format('truetype'),
-         url('courierprime.svg#courierprime') format('svg');
+src: url('font/courierprime.eot');
+    src: url('font/courierprime.eot?#iefix') format('embedded-opentype'),
+         url('font/courierprime.woff2') format('woff2'),
+         url('font/courierprime.woff') format('woff'),
+         url('font/courierprime.ttf') format('truetype'),
+         url('font/courierprime.svg#courierprime') format('svg');
 font-weight: normal;
 font-style: normal;
 }
 
 @font-face {
 font-family: 'CourierPrime';
-src: url('courierprimebold.eot');
-    src: url('courierprimebold.eot?#iefix') format('embedded-opentype'),
-         url('courierprimebold.woff2') format('woff2'),
-         url('courierprimebold.woff') format('woff'),
-         url('courierprimebold.ttf') format('truetype'),
-         url('courierprimebold.svg#courierprime') format('svg');
+src: url('font/courierprimebold.eot');
+    src: url('font/courierprimebold.eot?#iefix') format('embedded-opentype'),
+         url('font/courierprimebold.woff2') format('woff2'),
+         url('font/courierprimebold.woff') format('woff'),
+         url('font/courierprimebold.ttf') format('truetype'),
+         url('font/courierprimebold.svg#courierprime') format('svg');
 font-weight: bold;
 font-style: normal;
 }
 
 @font-face {
 font-family: 'CourierPrime';
-src: url('courierprimebolditalic.eot');
-    src: url('courierprimebolditalic.eot?#iefix') format('embedded-opentype'),
-         url('courierprimebolditalic.woff2') format('woff2'),
-         url('courierprimebolditalic.woff') format('woff'),
-         url('courierprimebolditalic.ttf') format('truetype'),
-         url('courierprimebolditalic.svg#courierprime') format('svg');
+src: url('font/courierprimebolditalic.eot');
+    src: url('font/courierprimebolditalic.eot?#iefix') format('embedded-opentype'),
+         url('font/courierprimebolditalic.woff2') format('woff2'),
+         url('font/courierprimebolditalic.woff') format('woff'),
+         url('font/courierprimebolditalic.ttf') format('truetype'),
+         url('font/courierprimebolditalic.svg#courierprime') format('svg');
 font-weight: bold;
 font-style: italic;
 }
 
 @font-face {
 font-family: 'CourierPrime';
-src: url('courierprimeitalic.eot');
-    src: url('courierprimeitalic.eot?#iefix') format('embedded-opentype'),
-         url('courierprimeitalic.woff2') format('woff2'),
-         url('courierprimeitalic.woff') format('woff'),
-         url('courierprimeitalic.ttf') format('truetype'),
-         url('courierprimeitalic.svg#courierprime') format('svg');
+src: url('font/courierprimeitalic.eot');
+    src: url('font/courierprimeitalic.eot?#iefix') format('embedded-opentype'),
+         url('font/courierprimeitalic.woff2') format('woff2'),
+         url('font/courierprimeitalic.woff') format('woff'),
+         url('font/courierprimeitalic.ttf') format('truetype'),
+         url('font/courierprimeitalic.svg#courierprime') format('svg');
 font-weight: normal;
 font-style: italic;
 }
-
 
 /**
  * Reset some basic elements
