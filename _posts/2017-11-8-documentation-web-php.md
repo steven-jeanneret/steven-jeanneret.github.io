@@ -83,26 +83,42 @@ function test() {
 # Importer un fichier php
 ```php
 require "file.php";
+```	
+
+# Redirection
+```php
+header("Location: http://example.com/myOtherPage.php");
 ```
 
 # Connexion à MYSQL avec PDO
 ```php
-    $PARAM = array(
-        'host' => 'localhost',
-        'port' => '3306',
-        'dbname' => 'simple',
-        'user' => 'root',
-        'pwd' => 'pass1234'
-    );
+$PARAM = array(
+	'host' => 'localhost',
+	'port' => '3306',
+	'dbname' => 'simple',
+	'user' => 'root',
+	'pwd' => 'pass1234'
+);
 
-    $pdo = new PDO('mysql:host=' . $PARAM['host'] . 
-		';port=' . $PARAM['port'] . ';dbname=' . 
-		$PARAM['dbname'] , $PARAM['user'] , $PARAM['pwd']);
-    $result = $pdo->prepare("select * from personne");
-    $result->execute();
-    $result->setFetchMode(PDO::FETCH_OBJ);
-    while ($ligne = $result->fetch()) {
-        print($ligne->nom . " : " . $ligne->email);
-        print("<br />");
-    }
+$pdo = new PDO('mysql:host=' . $PARAM['host'] . 
+	';port=' . $PARAM['port'] . ';dbname=' . 
+	$PARAM['dbname'] , $PARAM['user'] , $PARAM['pwd']);
+$result = $pdo->prepare("select * from personne");
+$result->execute();
+$result->setFetchMode(PDO::FETCH_OBJ);
+while ($ligne = $result->fetch()) {
+	print($ligne->nom . " : " . $ligne->email);
+	print("<br />");
+}
+```
+
+# Session
+```php
+session_start(); //Avant toute sortie!
+if(isset($_SESSION['produits'])) {
+	$produits = $_SESSION['produits']; //Get session var
+} else {
+	$_SESSION['produits'] = $produits; //Fix session var
+}
+echo($_SERVER['PHP_SELF']); //Show the URL
 ```
