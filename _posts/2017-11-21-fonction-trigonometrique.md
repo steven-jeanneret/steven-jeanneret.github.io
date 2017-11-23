@@ -10,12 +10,7 @@ category: math
 
 # Utilitaires trigonométrie
 ![fonctions trigonométrique](/image/img10.gif)
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+
 
 # Utilitaires fourier
 $\int_{0}^{2π} sin(mt) dt$ = 0 for any integer m
@@ -31,6 +26,4 @@ $\int_{0}^{2π} sin^{2}(mt) dt$ = π when m is non-zero int
 $\int_{0}^{2π} cos(mt)cos(nt) dt$ = 0 when m≠n or m≠-n
 
 $\int_{0}^{2π} cos^{2}(mt) dt$ = π when m is non-zero int
-
-
 
