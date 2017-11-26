@@ -4,6 +4,46 @@ title:  "Use the font Courier Prime on Jekyll"
 date:   2017-07-15 14:34:00 +0200
 category: jekyll
 ---
+
+- [Install jekyll](#install-jekyll)
+	- [Cloning the repository from git and finish installation](#cloning-the-repository-from-git-and-finish-installation)
+- [Run jekyll](#run-jekyll)
+- [Use Courier Prime on a site](#use-courier-prime-on-a-site)
+	- [Prerequisites](#prerequisites)
+	- [Generate all format](#generate-all-format)
+	- [Place files on the site](#place-files-on-the-site)
+	- [Modification of the base.scss](#modification-of-the-basescss)
+		- [Import the files](#import-the-files)
+		- [Use the font](#use-the-font)
+	- [Then push all on Github](#then-push-all-on-github)
+- [Use rouge on jekyll for highlighting](#use-rouge-on-jekyll-for-highlighting)
+	- [First we need to install kramdown and rouge](#first-we-need-to-install-kramdown-and-rouge)
+	- [Then modify the _config.yml and add this](#then-modify-the-configyml-and-add-this)
+	- [Now we can generate a css file from a template](#now-we-can-generate-a-css-file-from-a-template)
+
+# Install jekyll
+
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install ruby ruby-dev gem zlib1g-dev
+
+sudo gem install jekyll
+sudo gem install bundle
+```
+
+## Cloning the repository from git and finish installation
+```bash
+git clone https://github.com/steven-jeanneret/steven-jeanneret.github.io.git
+cd steven-jeanneret.io
+bundle
+```
+
+# Run jekyll
+```bash
+sudo bundle exec jekyll serve --watch
+```
+
 # Use Courier Prime on a site
 ## Prerequisites
 [Download Courier Prime](/linux/2017/07/15/install-font-courier-prime.html)
@@ -81,3 +121,27 @@ code {
 ```
 Courier New is here if Courier Prime can't be find!
 ## Then push all on Github
+
+# Use rouge on jekyll for highlighting
+## First we need to install kramdown and rouge
+
+```bash
+gem install kramdown rouge
+```
+
+## Then modify the _config.yml and add this
+```bash
+markdown: kramdown
+highlighter: rouge
+```
+
+## Now we can generate a css file from a template
+```bash
+rougify style colorful > ./assets/tmp.css
+```
+I choose to take colorful but I have made a lot of change.
+Then we need to copy the content of the file and add it to the scss of your site.
+
+Note that Github have already rouge, when you push your modification it will work. This installation is only to saw the highlight localy.
+
+[sources](https://benhur07b.github.io/2017/03/25/add-syntax-highlighting-to-your-jekyll-site-with-rouge.html)
