@@ -4,23 +4,78 @@ title:  "Documentation pour le cours de Java"
 date:   2017-10-19 21:34:00 +0200
 category: java
 ---
+
+- [Git](#git)
+	- [Push](#push)
+- [Convention](#convention)
+- [Raccourci clavier](#raccourci-clavier)
+- [Commentaire Java doc](#commentaire-java-doc)
+- [Utilitaires](#utilitaires)
+- [Théorie](#th%C3%A9orie)
+- [Container](#container)
+	- [Tableau](#tableau)
+		- [Initialisation](#initialisation)
+		- [Affichage](#affichage)
+		- [Tableau 2 dimensions](#tableau-2-dimensions)
+			- [Déclaration d'un tableau 2D](#d%C3%A9claration-dun-tableau-2d)
+				- [Tableau rectangulaire simple](#tableau-rectangulaire-simple)
+				- [Tailles des lignes différentes](#tailles-des-lignes-diff%C3%A9rentes)
+	- [Liste](#liste)
+		- [LinkedList](#linkedlist)
+		- [ArrayList](#arraylist)
+			- [Affichage](#affichage)
+	- [Set](#set)
+	- [Map, Dictionnaire](#map-dictionnaire)
+		- [TreeMap](#treemap)
+		- [HashMap](#hashmap)
+			- [Insertion](#insertion)
+			- [Affichage](#affichage)
+- [Wrapper](#wrapper)
+- [Itérateur](#it%C3%A9rateur)
+- [Enum](#enum)
+- [Classe incontournable](#classe-incontournable)
+	- [Arrays](#arrays)
+	- [Math](#math)
+	- [Random](#random)
+- [Canevas](#canevas)
+- [Importer un jar dans le Workspace](#importer-un-jar-dans-le-workspace)
+- [Assertion](#assertion)
+- [Test unitaire](#test-unitaire)
+	- [Test unitaire du workspace](#test-unitaire-du-workspace)
+- [Try Catch](#try-catch)
+- [Bonnes pratiques](#bonnes-pratiques)
+	- [TODO et FIXME](#todo-et-fixme)
+	- [Regénération du projet et test unitaire](#reg%C3%A9n%C3%A9ration-du-projet-et-test-unitaire)
+- [Outils de monitoring](#outils-de-monitoring)
+- [Programmation Orientée Objet](#programmation-orient%C3%A9e-objet)
+	- [Constructeur](#constructeur)
+	- [Constructeur par recopie](#constructeur-par-recopie)
+	- [Méthode](#m%C3%A9thode)
+	- [Attributs](#attributs)
+	- [Stringbuilder](#stringbuilder)
+	- [Tostring](#tostring)
+	- [Classe inaltérable](#classe-inalt%C3%A9rable)
+- [Accès aux attributs](#acc%C3%A8s-aux-attributs)
+- [Static](#static)
+- [Surcharge des opérateurs](#surcharge-des-op%C3%A9rateurs)
+- [Réecriture](#r%C3%A9ecriture)
+	- [Run](#run)
+	- [Iterable](#iterable)
+	- [equals](#equals)
+	- [Clone](#clone)
+- [hashcode](#hashcode)
+	- [Héritage de la classe Object](#h%C3%A9ritage-de-la-classe-object)
+- [Object](#object)
+- [A trier!](#a-trier)
+- [Déploiement suite](#d%C3%A9ploiement-suite)
+- [Creer un jar](#creer-un-jar)
+
 # Git
 ```bash
 git clone ssh://java@157.26.83.27/home/java/git/WCoursJava.git
 ```
 
-## 2 ème semaine
-créer java2
-cloner dans java2
-travailler dans java2
-
-## 3 ème semaine
-créer java3
-cloner dans java3
-travailler dans java3
-
-
-## Au projecteur
+## Push
 Sélectionner le projet du cours java 
 Raccourci commit dans eclipse (à droite de +)
 **CTRL + A** clic droit ajouter à l'index (tant que il y a qqch)
@@ -36,6 +91,7 @@ Big **CamelCase** pour les classes
 **ctrl + shift + f** formate le code pour la convention White Smith
 **ctrl + shift + o** organise et purge les include
 **ctrl + shift + s** Sauvegarde tout et compile
+**alt + shift + r** Refactor 
 
 # Commentaire Java doc
 Commentaire java doc ```/**``` -> enter
@@ -75,6 +131,13 @@ Java même type que C++ sauf les unsigned !
 
 **Interface** liste de méthodes publiques non-statiques non-implémentés
 
+Exemple d'interface : 
+* List
+* Set
+* Runnable
+* Iterable
+
+
 # Container
 ## Tableau
 ### Initialisation
@@ -99,6 +162,21 @@ System.out.println(Arrays.toString(tab));
 ```
 [La classe Arrays](#classe-incontournable)
 
+### Tableau 2 dimensions
+N'existe pas en informatique (mémoire linéaire), tableau 1D dans un tableau 1D
+#### Déclaration d'un tableau 2D
+##### Tableau rectangulaire simple
+```java
+double[][] tab2D = new double[n][m];
+```
+##### Tailles des lignes différentes
+```java
+double[][] tabExtern = new double[n][];
+for(int i = 0; i < n; i++) {
+	double[] tabLigne = new double[m];
+	tabExtern[i] = tabLigne;
+}
+```
 
 ## Liste
 ### LinkedList
@@ -160,8 +238,6 @@ set.add(Math.PI);
 }
 ```
 
-
-
 ## Map, Dictionnaire
 > Système de clé valeur
 
@@ -209,7 +285,7 @@ for(Entry<String, Integer> entry:set) {
 
 **Type** | **Wrapper**
 --- | ---
-double | double
+double | Double
 long | Long
 float | Float
 int | Integer
@@ -224,7 +300,6 @@ while(it.hasNext()) {
 	double element = it.next(); //unboxing automatique Double->double
 	System.out.println(element);
 }
-
 ```
 
 Conversion de wrapper avec les itérateurs
@@ -253,6 +328,7 @@ Day d1 = Day.MONDAY;
 Permet par exemple de convertir un tableau en string
 ```java
 System.out.println(Arrays.toString(tab));
+Arrays.sort(tab);
 ```
 
 ## Math
@@ -260,6 +336,7 @@ Exemple d'arrondi supérieur
 ```java
 Math.ceil(nbLancees / (double)nbSimulations)
 ```
+atan2 permet de faire im/re sans ce soucier que re peut être = 0
 
 ## Random
 Exemple de nombre aléatoire entre 1 et size
@@ -267,8 +344,6 @@ Exemple de nombre aléatoire entre 1 et size
 Random r = new Random(); 
 int value = r.nextInt(size) + 1;
 ```
-
-## String
 
 # Canevas
 Les canevas servent à générer un bout de code.
@@ -280,6 +355,9 @@ cmain | code de base d'un main
 cmpu | ?
 cmpr | ? 
 cjunit | pour les tests unitaires
+csa | canevas static attributs
+ci | canevas is
+cs | canevas static
 
 # Importer un jar dans le Workspace
 > Copier le jar dans workspace -> PDeploy -> Deploy -> ext
@@ -299,7 +377,9 @@ Assert.assertTrue(list1.size()==list2.size());
 ```
 
 # Test unitaire
-[Importer le jar](#importer-un-jar-dans-le-workspace)
+Dans les tests unitaires on prend des valeurs différentes de 1 et 0, ainsi que des mêmes chiffres.
+
+> Un assert par fonction test.
 
 Utiliser le canevas cjunit dans une nouvelle classe.
 Le @Test permet de définir que la fonction qui suit est un test.
@@ -338,12 +418,233 @@ catch (NumberFormatException e) {
 }
 ```
 
+# Bonnes pratiques
+<span style="color:red"> Vérifier le code</span>
+Ne **jamais** modifier les valeurs passées en paramètres, copier(cloner) puis trier.
+
+> Si le code est général et réutilisable on fait une bibliothèque pour pouvoir la réutiliser et la partager.
+
+## TODO et FIXME
+```java
+//TODO commentaire permettant de revenir rapidement
+//FIXME commentaire permettant de revenir rapidement
+```
+
+## Regénération du projet et test unitaire
+Supprimer les fichiers compilé :
+
+On supprime le ch dans bin
+
+Regeneration des fichiers compilé
+
+Project -> clean -> nettoyer tous
+
+Lancer les tests unitaires de tous le projet
+
+# Outils de monitoring 
+jvisualvm (Raccourci bureau)
+On voit les machines virtuelles java qui sont entrain de tourner. (faire un long sleep pour qu'elle reste allumer).
+On peut voir voit les propriétés.
+On va la récupérer depuis le code java : 
+```java
+String name = System.getProperty("user.name");
+```
+
+# Programmation Orientée Objet
+Structure est un container multi types
+
+## Constructeur
+Construit les données
+
+## Constructeur par recopie
+On appel le constructeur principal depuis le constructeur secondaire.
+```java
+A(int m) {
+	this.m = m;
+}
+
+A(A src) {
+	this(A.m());
+}
+```
+
+L'appel d'un constructeur principal depuis un constructeur secondaire, doit se faire à la 1ère ligne.
+L'astuce est de faire une méthode static pour copier le tableau. 
+
+> Si la méthode n'est pas static on ne peux l'appeler avant d'avoir créer l'objet or on veut l'appeler avant la construction!
+
+Pour un type simple on copie la valeur pas le pointeur donc pas de new dans le constructeur par copie.
+
+## Méthode
+Modifie les données
+
+## Attributs
+Contienne les données
+* Input
+* Tools
+* Output
+
+On commence par créer les attributs 
+puis clic droit sources -> generate constructor using Fields
+clic droit sources -> generate tostring
+
+## Stringbuilder
+Permet de construire une string
+on tapes : marque : " + this.brand ...
+
+on le séléectionnes et quick fix -> extract Use stringbuilder
+
+## Tostring
+Source generate to string
+
+## Classe inaltérable 
+Classe dont les données ne sont pas modifiées via des setters.
+> String est une classe inaltérable
+
+```java
+String str = "Pirelli"; //Créer l'objet pirelli
+str = "Continental"; //Créer un nouvel objet Continental
+```
+Quand on modifie un string, il crée un nouvel objet, on ne modifie pas l'ancien!
+
+# Accès aux attributs
+On peut accèder aux attributs private depuis une classe, les getters servent uniquement à l'extérieur de la classe.
+
+
+# Static 
+Si on utilise pas this (attribut) dans la méthode c'est qu'elle doit être static.
+
+# Surcharge des opérateurs
+> En java, il n'y a pas de surcharge des opérateurs!
+
+c3 = c1 + c2 devient :
+c3 = c1.add(c2);
+
+```java
+public Complexe add(Complexe z2)
+	{
+	return new Complexe(this.x + z2.x, this.y + z2.y);
+	}
+```
+
+# Réecriture
+... changer le nom
+## Run
+implements Runnable //a la suite de la déclaration de la classe 
+```java
+public class Lineaire implements Runnable
+```
+
+Ensuite on peut générer le run en restant sur l'erreur du nom de classe
+```java
+@Override
+public void run() {
+	x = -b/a;
+}
+```
+
+## Iterable
+```java
+for(Type var:Iterable<T>)
+```
+> Iterable est l'objet qu'on veut parcourir
+Pour une classe, il faudra implémenter Iterable.
+
+```java
+public class Garage implements Iterable<Car>
+
+...
+
+@Override
+public Iterator<Car> iterator(); {
+	return listCars.iterator();
+}
+```
+
+## equals
+equals ctrl + space permet de récrire equals
+```java
+@Override
+public boolean equals(Object obj)
+	{
+	if (obj instanceof Complexe)
+		{
+		return this.isEquals((Complexe)obj);
+		}
+	else
+		{
+		return false;
+		}
+	}
+```
+
+## Clone
+clo -> clone
+```java
+public Complexe cloneOf()
+		{
+		return new Complexe(this);
+		}
+
+@Override
+protected Complexe clone() throws CloneNotSupportedException
+	{
+	return this.cloneOf();
+	}
+```
+
+2 objets égaux doivent avoir le même hashcode.
+Ce n'est pas parce 2 objets ont le même hashcode qu'ils sont égaux.
+# hashcode
+```java
+@Override
+public int hashCode()
+	{
+	return 1;
+	}
+```
+return 1 if is equals
+
+## Héritage de la classe Object
+Toutes les classes hérites de Object 
+# Object 
++ toString()
++ equals()
++ close()
++ hashcode()
+
+
+
 
 
 
 # A trier!
+
 Garbage collector
+
 Java tous est références
+
+# Déploiement suite
+Dans eclipse on exécute des fichiers .class
+Pour le déploiement on veut faire des packages donc on prend nos fichiers .class on les transforme en .jar (via .zip)
+
+On mets tous dans Deploy
+copier/coller soft -> java -> jre dans workspace...../...../Deploy/
+On ajoute le nom qualitfié de la classe
+On édite run.cmd  pour savoir quel fichier on va exécuter -> ch.hear.cours................UseQuadratiqueClavier
+Et on décommente :
+```bash
+rem set JRE_PATH=./jre/bin
+rem set PATH=%JRE_PATH%;%PATH%
+```
+
+Création du jar
+On zip ch de bin avec l'algorithme zip et on renomme l'extension .zip en .jar
+On place ce .jar dans deploy
+
+On copie le folder deploy dans la machine virtuel
+
+On lance le run
 
 
 
