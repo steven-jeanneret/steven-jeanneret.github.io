@@ -209,6 +209,7 @@ Si entre n'importe quel mots code valide il faut au moins 2 perturabations, on p
 Pour la correction il faut que 2 mots codes erronée (d'un bit) ne puisse être identique.
 
 $$D_{Hamming}(N)\geq(E+1)$$ pour détecter E erreurs simples
+
 $$D_{Hamming}(N)\geq(2E+1)$$ pour corriger E erreurs simples
 
 N est l'ensemble des mots codes valides.
