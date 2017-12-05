@@ -35,6 +35,7 @@ category: réseau
 	- [Détection d'erreur](#d%C3%A9tection-derreur)
 		- [Parité](#parit%C3%A9)
 		- [CRC](#crc)
+	- [Rendement intrinsèque](#rendement-intrins%C3%A8que)
 - [Objectifs](#objectifs)
 
 # Introduction
@@ -238,7 +239,8 @@ Mode infrastructure : présence d'un AP, on peut atteindre de plus grande distan
 
 Abaisser le MTU en PPPoE car présence d'entêtes de transport Ethernet supplémentaires qui limite la tailles des données disponibles pour les couches supérieures dont IP.
 
-
+## Rendement intrinsèque
+$$ U_{intr}=\frac{l_{utile}}{l_{totale}} $$
 
 
 
