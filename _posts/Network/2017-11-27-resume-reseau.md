@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Résumé réseau"
-date:   2017-11-26 10:22:00 +0200
+date:   2017-12-05 10:22:00 +0200
 category: réseau
 ---
 
@@ -35,22 +35,30 @@ category: réseau
 	- [Détection d'erreur](#d%C3%A9tection-derreur)
 		- [Parité](#parit%C3%A9)
 		- [CRC](#crc)
-	- [Rendement intrinsèque](#rendement-intrins%C3%A8que)
-- [Objectifs](#objectifs)
+			- [CRC par tranche](#crc-par-tranche)
+- [Questions diverses](#questions-diverses)
+	- [Rendement](#rendement)
+		- [Rendements ldle RQ](#rendements-ldle-rq)
+		- [Rendement Continuous RQ selective repeat](#rendement-continuous-rq-selective-repeat)
+		- [Rendement Continuous RQ go-back-N](#rendement-continuous-rq-go-back-n)
 
 # Introduction
 ## Compression de l'information
 * Une suite de symboles codés sur 8 bits et produits aléatoirement.
+
 > Chaque symbole prend 8 bits, aucune compression possible si purement aléaotire.
 
 * Une suite formée d'un symbole toujours identique.
+
 > On remarque qu'aucune information n'est transmise. On peut donc ne pas coder le symbole.
 
 * Une suite formée de symboles alternant entre 0 et 1
+
 > On remarque qu'aucune information n'est transmise. On peut donc ne pas coder le symbole.
 
 * Une suite aléatoire dans l'ensemble [A-Z0-5]
-> On peut coder sur 5 bits ( $$2^{5}=32 symboles$$ )
+
+> On peut coder sur 5 bits $$2^{5}=32 symboles$$
 
 
 
@@ -62,12 +70,12 @@ La forme de codage détermine l'efficacité et la résistance aux erreurs de tra
 
 ### Formes de codages
 * Le codage de source à pour but de réduire la redondance, algorithme de compression/décompression, avec ou sans perte.
-* Le codage de voie à pour but de protéger les données contre les perturbations, ajout de redondance pour détercter voir corriger les erreurs de transmission.
+* Le codage de voie à pour but de protéger les données contre les perturbations, ajout de redondance pour détecter voir corriger les erreurs de transmission.
 
 ## Sources
 Une **source d'information discrète** est un système capable de générer un flux d'information selon une loi statistique donnée, possède un alphabet fini.
 Si la probabilité d'apparition d'un symbole dépend des symboles apparus jusque là on parle de **source de Markov** sinon de **source sans mémoire**
-Les langues naturelles sont des source de Markov, un après un a il y a plus de chance qu'un n apparaisse plutôt qu'un e.
+Les langues naturelles sont des source de Markov, après un *a* il y a plus de chance qu'un *n* apparaisse plutôt qu'un *e*.
 
 ## Conversion A/D
 La première phase, l'échantillonnage prélève $$2f_{max}$$ échantillons/seconde. Le théorème de Nyquist dit que 8000 échantillons par seonde suffisent pour une fréquence entre 0 et 4 kHz (assuré par un filtre passe bas).
@@ -88,7 +96,8 @@ Le débit bianire peut être vu comme la dérivé de D par rapport au temps t.
 ## Quantité d'information
 Les symboles apparaissant le plus souvent seront encodés sur le moins de bits possible.
 
-$$P_{i}$$ est le nombre d'apparition / le nombre total d'apparition
+$$ P_{i} est = \frac{nb apparition}{nb total apparition} $$
+
 $$H_{i}=-log_{2}P_{i}$$
 
 ## Entropie
@@ -106,6 +115,7 @@ On tente d'élimier cette redondance en utilisant un codage le plus efficace pos
 
 ## Compression sans perte
 Plusieurs options s'offrent ici :
+
 * Considérer la répartition statistique de chaque symbole, compression entropique classique (la seule sans mémoire)
 	* Code de Shannon-Fano
 		* Classe les symboles par probabilité descendante
@@ -134,16 +144,15 @@ Les fichiers multimédia tels que sons, images et vidéos peuvent avoir un ratio
 ### Algorithmes
 * Prédictif, définit un signal par rapport au passé ainsi qu'une variation du signal correspond bien à la musique
 * Transformatifs, basés sur des constatations liés au sens humains. Résolution d'image basse lors d'un mouvement rapide, fréquence inaudible en musique.
-* 
-
-
 
 # Les limites des canaux
 ## Rapel logarithmes
 $$ log_{a}(x)=\frac{log_{b}(x)}{log_{b}(a)} $$
+
 ## Etats électriques
 Il faut coder l'information de façon adaptée au support de transmission.
 Pour un support de transmission électrique on peut :
+
 * Utiliser 2 tensions une pour le 0 et une pour le 1
 * Utiliser 4 tensions pour faire des paire de bits (00,01,10,11)
 * Utilisation de $$2^{n}$$ pour transmettre n état du canal
@@ -152,13 +161,15 @@ Pour un support de transmission électrique on peut :
 Sur fibre optique on peut représenter la valeur 1 par la présence de lumière.
 
 ## Débit de décision et débit de moment
-Le débit de décision est donné en bits par seconde (bps), c'est le nombre de bits par état * la fréquence de changement d'état du canal (Baud). 
-Le débit de moment est donnée en Baud.
+Le débit de décision est donné en bits par seconde (bps), c'est le nombre de bits par état
+Le débit de moment est donnée en Baud, la fréquence de changement d'état du canal. 
 
 $$D = log_{2}(m)*M$$
 
 D est le débit de décision (bps)
+
 M est le débit de moment (Baud)
+
 m est le nombre d'états
 
 ### Bande passante
@@ -223,13 +234,32 @@ Pour corriger l'erreur il faudrait utiliser la parité double (horizontale et ve
 ### CRC
 > Pour les trames de grande longueur avec possibilité d'erreurs en rafales
 
-$$ M(x)*x^{r} $$ Ajout de r zéros après le LSB du bloc
+On ajoute *N* zéros derrière le message *M*, ou *N* = nombre de bit du diviseur *D* - 1 on obtiens *G*.
 
-$$ R(x)=\frac{M(x)*x^{r}}{G(x)} $$ R(x) ne peux faire plus de r bits (grâce à la division)
+On divise *G* (avec des xor), Quand on descend un nombre à la fois, on note 1 si on descend 2 nombres à la fois on note 0. On obtiens un reste *R*.
 
-$$ T(x)=M(x)*x^{r}-R(x) $$ Polynôme qui seras transmis et divisible par G(x) modulo 2
+On envoi le message *M* suivis de *R* (représenté sous *N* bits!) qui forme *O*.
 
-A la réception, on effectue la division par le polynôme générateur pour savoir s'il s'est produit des erreurs détectables ou non.
+On reçois *O* qu'on divise par *D*.
+
+Si on obtiens 0, il n'y a pas eu d'erreur sinon il y a des erreurs.
+
+#### CRC par tranche
+Calcul du CRC par tranches de *n* nouveaux bits à chaque fois en partant du CRC précèdant.
+
+symbole|signification
+-----|-----
+*c*|Anciens bits de redondance déjà calculés
+*d*|Nouveaux bits de redondance à trouver
+*r*|Nombre de bits du reste
+*n*|Nombre de nouveaux bits de la tranche
+*m*|Nombre de bits déjà pris en compte dans le message
+*ab*|Juxtaposition des *m* et des *n*
+*g*|Générateur, diviseur de r+1 bits
+*/*|Reste de la division
+*+*|Ou exclusif
+
+# Questions diverses
 
 DSLAM (multiplexeur des flux ADSL sur ATM) permet de transmettre sur différents canaux sur le même câbles physiques.
 
@@ -239,34 +269,44 @@ Mode infrastructure : présence d'un AP, on peut atteindre de plus grande distan
 
 Abaisser le MTU en PPPoE car présence d'entêtes de transport Ethernet supplémentaires qui limite la tailles des données disponibles pour les couches supérieures dont IP.
 
-## Rendement intrinsèque
-$$ U_{intr}=\frac{l_{utile}}{l_{totale}} $$
+## Rendement
 
+$$ P_{f}=1-(1-P)^{N} $$
 
+P est le taux d'erreur de la ligne.
 
+N est la taille du paquet (taille du messages si < taille max)
 
+$$ a=\frac{T_{P}}{T_{ix}} $$
 
+a est le rendement du protocole.
 
+$$ T_{p} $$ est le temps de propagation
 
+$$ T_{ix} $$ est le temps de propagation du message, obtenu par $$ T_{ix}=\frac{N}{D} $$
 
+D est le débit en bits par seconde
 
+### Rendements ldle RQ
 
+* $$ U=\frac{1-P_{f}}{1+2a} $$
 
+### Rendement Continuous RQ selective repeat
 
+* $$ k<1+2a $$
+	
+	$$ U=\frac{k(1-P_{f})}{1+2a} $$
 
+* $$ k\geq1+2a $$
+	
+	$$ U=1-P_{f} $$
 
+### Rendement Continuous RQ go-back-N
 
+* $$ k<1+2a $$
+	
+	$$ U=\frac{k(1-P_{f})}{(1+2a)(1+P_{f}(k-1))} $$
 
-# Objectifs
-* limites des canaux
-	* capacité des canaux (Nyquist, Shannon)
-* le traitement des erreurs (codage de voie)
-	* exemples: parité, paritée croisée, etc
-		* application au RAID
-	* CRC
-		* principes et fonctionnement
-		* calcul manuel
-		* calcul par tranche d'un CRC
-			* optimisation par table (programme informatique)
-			* (application au cas à 1 bit schéma d'implémentation du CRC en matériel)
-		* erreurs non détectées
+* $$ k\geq1+2a $$
+	
+	$$ U=\frac{1-P_{f}}{1+P_{f}(k-1)} $$
