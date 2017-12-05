@@ -93,7 +93,7 @@ $$H_{i}=-log_{2}P_{i}$$
 ## Entropie
 L'entropie est la quantité moyenne :
 
-$$H=\sum P_{i}*log_{2}(P_{i})$$
+$$H=-\sum P_{i}*log_{2}(P_{i})$$
 
 ## Redondance
 On pourra au mieux avoir une taille égale à l'entropie.
@@ -108,7 +108,7 @@ Plusieurs options s'offrent ici :
 * Considérer la répartition statistique de chaque symbole, compression entropique classique (la seule sans mémoire)
 	* Code de Shannon-Fano
 		* Classe les symboles par probabilité descendante
-		* On divise les symboles en deux sous-ensemble
+		* On divise les symboles en deux sous-ensemble le plus égaux possible (nombre de redondance)
 		* On attribue 0 à un groupe et 1 à l'autre
 		* Puis on répète l'étape
 	* Code de Huffman
@@ -229,6 +229,16 @@ $$ R(x)=\frac{M(x)*x^{r}}{G(x)} $$ R(x) ne peux faire plus de r bits (grâce à 
 $$ T(x)=M(x)*x^{r}-R(x) $$ Polynôme qui seras transmis et divisible par G(x) modulo 2
 
 A la réception, on effectue la division par le polynôme générateur pour savoir s'il s'est produit des erreurs détectables ou non.
+
+DSLAM (multiplexeur des flux ADSL sur ATM) permet de transmettre sur différents canaux sur le même câbles physiques.
+
+Backhaul toutes technologies qui se situent entre l'abonné et le réseau central.
+
+Mode infrastructure : présence d'un AP, on peut atteindre de plus grande distance, possibilité d'étendre le réseau avec plusieurs AP.
+
+Abaisser le MTU en PPPoE car présence d'entêtes de transport Ethernet supplémentaires qui limite la tailles des données disponibles pour les couches supérieures dont IP.
+
+
 
 
 
