@@ -184,7 +184,8 @@ code {
 }
 
 code {
-  padding: 1px 5px;
+  padding: 1px 5px;	
+  opacity: 1;
   color :  white; 
   /*Adding font for the code*/
   /*@import url("CourierPrime");*/
@@ -412,7 +413,8 @@ td{
 }
 	/*Background du code*/
 .highlighter-rouge .highlight {
-  background: #272822;
+  background: #1D1F21;
+  opacity: 0.95;
   position: relative;
 }
 
@@ -653,7 +655,7 @@ td{
 
 /*String*/
 .highlight .s {
-    color: #2B5034; 
+    color: rgb(143, 76, 22); 
 }
 
 /*Nom de fonction Java méthode*/
