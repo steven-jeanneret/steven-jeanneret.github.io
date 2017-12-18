@@ -2,7 +2,7 @@
 layout: post
 title:  "Documentation pour le cours de Java"
 date:   2017-10-19 21:34:00 +0200
-category: java
+category: résumé
 ---
 
 - [Git](#git)

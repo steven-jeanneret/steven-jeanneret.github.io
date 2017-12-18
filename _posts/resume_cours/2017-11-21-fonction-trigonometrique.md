@@ -2,7 +2,7 @@
 layout: post
 title:  "Trigonométrie"
 date:   2017-11-22 15:22:00 +0200
-category: math
+category: résumé
 ---
 
 - [Utilitaires trigonométrie](#utilitaires-trigonom%C3%A9trie)

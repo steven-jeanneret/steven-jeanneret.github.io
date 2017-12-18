@@ -2,7 +2,7 @@
 layout: post
 title:  "Résumé réseau"
 date:   2017-12-05 10:22:00 +0200
-category: réseau
+category: résumé
 ---
 
 - [Introduction](#introduction)
