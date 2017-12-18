@@ -17,7 +17,7 @@ category: résumé
 
 # Definition
 * Programme **séquentiel** exécute les instructions les unes après les autres.
-* Programme **concurrent** exécute plusieurs tâches à la fois, le temps de calcul est **partagé** entre les threads.
+* Programme **concurrent** exécute plusieurs thread à la fois, le temps de calcul est **partagé** entre les threads.
 * Programme **parallèle** Sur plusieurs coeurs, les tâches se déroulent réelement en même temps.
 
 S'il y a concurrence, plusieurs actions se déroulent en même temps. le programme devient alors non-déterministe (on ne connait pas l'ordre d'exécution).
