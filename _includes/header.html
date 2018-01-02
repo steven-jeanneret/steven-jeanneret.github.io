@@ -1,59 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111105599-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
 
-	<title>Documentation de Steven</title>
-	<meta name="description" content="Here you will find some documentation about computer science">
-	<link rel="stylesheet" href="{{ site.baseurl }}/assets/base.css">
-	<link rel="canonical" href="steven.jeanneret.github.io">
-	<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-	<!-- <link rel="alternate" type="application/rss+xml" title="Documentation de Steven" href="/feed.xml"> -->
-	<script type="text/x-mathjax-config">
-		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-	</script>
-	<script type="text/javascript" async
-  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
-	</script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111105599-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+			gtag('config', 'UA-111105599-1');
+		</script>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
 
-		gtag('config', 'UA-111105599-1');
-	</script>
+		<title>Documentation de Steven</title>
+		<meta name="description" content="Here you will find some documentation about computer science">
+		<link rel="stylesheet" href="{{ site.baseurl }}/assets/base.css">
+		<link rel="canonical" href="steven.jeanneret.github.io">
+		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+		<!-- <link rel="alternate" type="application/rss+xml" title="Documentation de Steven" href="/feed.xml"> -->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+		</script>
+		<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+	</head>
 
-  
-</head>
-
-
-  <body>
-    <header class="site-header" role="banner">
-
-  <div class="wrapper">
-    
-    
-    <a class="site-title" href="/">Home</a>
-    <p class="site-title">&nbsp;/&nbsp;</p>
-    {% unless p.category == empty %}
-    {% for category in page.category %}
-    <a class="site-title" href="/search?query={{category}}">{{ category }}</a>
-    {% endfor %}
-    {% endunless %}
-      <nav class="site-nav">
-        <div class="trigger">
-         <form action="/search.html" method="get">
-          <input type="text" id="search_box" name="query">
-          <input type="submit" value="search" id="search_button">
-        </form>
-        </div>
-      </nav>
-    
-  </div>
-</header>
-<body>
+	<body>
+		<header class="site-header" role="banner">
+			<div class="wrapper">
+				<a class="site-title" href="/">Home</a>
+				<p class="site-title">&nbsp;/&nbsp;</p>
+				{% unless p.category == empty %}
+				{% for category in page.category %}
+				<a class="site-title" href="/search?query={{category}}">{{ category }}</a>
+				{% endfor %}
+				{% endunless %}
+				<nav class="site-nav">
+					<div class="trigger">
+					<form action="/search.html" method="get">
+					<input type="text" id="search_box" name="query">
+					<input type="submit" value="search" id="search_button">
+					</form>
+					</div>
+				</nav>
+			</div>
+		</header>

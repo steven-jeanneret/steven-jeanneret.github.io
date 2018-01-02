@@ -18,10 +18,26 @@ category: résumé
 # Definition
 * Programme **séquentiel** exécute les instructions les unes après les autres.
 * Programme **concurrent** exécute plusieurs thread à la fois, le temps de calcul est **partagé** entre les threads.
-* Programme **parallèle** Sur plusieurs coeurs, les tâches se déroulent réelement en même temps.
+* Programme **parallèle** on spécifie sur plusieurs coeurs tourne quel thread, les tâches se déroulent réelement en même temps.
 
-S'il y a concurrence, plusieurs actions se déroulent en même temps. le programme devient alors non-déterministe (on ne connait pas l'ordre d'exécution).
+> Le système d'exploitation *exécutera* probablement les threads en parallèle.
 
+S'il y a concurrence, on ne connait pas l'ordre d'exécution des tâches. le programme devient alors **non-déterministe**.
+
+# Atomique
+Une opération qui ne peut pas être interrompus, indivisible.
+
+# Section critique
+Zone pouvant être accédée par plusieurs threads au même moment.
+
+# Deadlocks / famine
+Quand une opération est vérouillé de façon infinie.
+
+# Mutex / exclusion mutuel
+Facilite la synchronisation de thraed pour bloquer une utilisation simultané des mêmes données.
+
+# Sémaphore
+Voir vidéo
 
 
 
