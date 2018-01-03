@@ -69,6 +69,32 @@ category: résumé
 - [A trier!](#a-trier)
 - [Déploiement suite](#d%C3%A9ploiement-suite)
 - [Creer un jar](#creer-un-jar)
+- [A trier](#a-trier)
+- [Bonne pratique](#bonne-pratique)
+- [Créatioon d'interface](#cr%C3%A9atioon-dinterface)
+- [Template](#template)
+	- [Dans l'interface](#dans-linterface)
+	- [Dans la classe](#dans-la-classe)
+	- [Dans le use](#dans-le-use)
+- [Enum](#enum)
+	- [Création](#cr%C3%A9ation)
+	- [Constructeur](#constructeur)
+	- [Utilisation](#utilisation)
+- [Polymorphisme](#polymorphisme)
+	- [Interface](#interface)
+- [Compare](#compare)
+- [Sort](#sort)
+	- [Use](#use)
+	- [Redefinition comparator](#redefinition-comparator)
+- [Classe interne anonyme](#classe-interne-anonyme)
+- [Java 21.12.17](#java-211217)
+- [Déploiement linux](#d%C3%A9ploiement-linux)
+	- [Pour passer des paramètres](#pour-passer-des-param%C3%A8tres)
+	- [Installer Java](#installer-java)
+	- [pouvoir taper le nom du programme n'importe ou](#pouvoir-taper-le-nom-du-programme-nimporte-ou)
+- [pi](#pi)
+- [plusieurs implémentation](#plusieurs-impl%C3%A9mentation)
+- [Polymorphisme](#polymorphisme)
 
 # Git
 ```bash
@@ -653,4 +679,280 @@ Dans bin on zip .ch en paramètre et on spécifie standard (pas optimisé)
 On spécifie CoursJava.jar
 On le mets dans pDeploy/Deploy
 On édite le script run pour ajouter le chemin complet : ch.hearc.cours.kitbase.quadratique.UseQuadratiqueArgs a=1 b=-3 c=2
-Cehmin du programme et paramètres
+Cehmin du programme et 
+
+# A trier
+En java avec == on compare les références.
+
+Pour comparer le contenu on utilise eiquals.
+
+> Il faut la réimplémenter dans la classe de base elle ne sert à rien.
+
+> La méthode clone de base copie la référence., il faut la réimplémenter.
+
+En java on dois systématiquement redéfinir equals clone toString et hashcode
+
+* Classe de type algorithmique => lance Runnable ici on ne redéfinit pas les 4 méthodes de bases.
+* Data Container on redéfinit les 4 méthodes de bases.
+
+# Bonne pratique
+On redéfinis equals mais en changeant le nom en isEquals. Ceci permet d'être sur qu'on à déjà redéfinit la classe.
+
+Depuis clone on appel cloneOf qui est réimplémenté!
+
+equals => isEquals
+clone => cloneOf
+
+\n utilisé 100000 fois une seule fois en mémoire : 
+
+```java
+private static final String RETOURCHARIOT = "\n";
+```
+
+puis on utilise RETOURCHARIOT
+
+# Créatioon d'interface
+On créer une nouvelle interface
+
+> Ajout de _I à la fin permet d'identifier l'interface
+
+```java
+public interface Stack_I {
+	public int size();
+	public Integer po();
+	public void push(Integer x);
+}
+```
+
+ensuite notre classe Stack qui se base sur l'interface Stack_I
+
+```java
+public class Stack implements Stack_I {
+	@Override
+	public Integer pop() { //code}
+
+	@Override
+	public void push(Integer elem) { //code}
+
+	@Override
+	@Override
+	public int size() { //code}
+}
+```
+
+> On est obligé d'implémenter au minimum les méthodes de l'interface!
+
+# Template
+## Dans l'interface
+```java
+public interface Stack_I<T> {
+	public int size();
+	public T pop();
+	public void push(T x);
+}
+```
+
+## Dans la classe
+```java
+public class StackArray<T> implements Stack_I<T> {
+	@Override
+	public int size() {/*code*/}
+	@Override
+	public T pop() {/*code*/}
+	@Override
+	public void push(T x) {/*code*/}
+
+	private List<T> list;
+}
+```
+
+## Dans le use
+```java
+public static void main() {
+	Stack_I<Integer> stack = new StackArray<Integer>();
+	use(stack);
+}
+
+private static void use(Stack_I<Integer> stack) {
+	Assert.assertTrue(stack.size()==0);
+	stack.push(1);
+}
+```
+
+# Enum
+## Création
+Creation new ENUM file
+
+```java
+public enum Mois
+{
+	JANVIER, FEVRIER, MARS, AVRIL, MAI, JUIN, JUILLET, AOUT, SEPTEMBRE, OCTOBRE, NOVEMBRE, DECEMBRE;
+}
+```
+
+## Constructeur
+le constructeur doit être privé.
+
+> On ne peut pas créer d'autres instance.
+
+## Utilisation
+for(Mois mois:Mois.values()) {
+	System.out.println(mois);
+}
+
+canevas : 
+* ca 
+* cmpu
+* cmpr
+
+
+# Polymorphisme
+Un langage est polymorphe s'il accepte de voir un même et unique objet sous plusieurs forme.
+## Interface
+```java
+ArrayList<a> listA = new ArrayList<a>();
+//LinkedList<a> listL = new LinkedList<a>;
+List<a> list = listA; //Type effectif ArrayList, type-local List
+Object o = list; // Type effectif ArrayList, type-local object
+```
+Un seul objet en mémoire 2 références => polymorphisme.
+
+On peut voir la list comme :
+Polymorphisme(Interface) : list => 
+ * List<a>
+ * ArrayList<a>
+ * object
+
+Type-locale (compilateur) 
+Type-effectif (runtime)
+
+list.size() ;//Fait partie de List, size ce fait sur la seule chose en mémoire, ArrayList.
+
+# Compare
+a > b => 1
+a = b => 0
+a < b => -1
+
+# Sort
+void sort(List<T> list, Comparator<T> )
+Interface
+
+Collections.sort(list,comparator);
+C'est un tri sur place, on modifie directemnet la liste.
+
+Il faut implémenter comparator pour notre classe spécifique.
+
+## Use
+```java
+Comparator<Homme> hommeComparatorCroissant = new HommeComparatorCroissant();
+Collections.sort(list, hommeComparatorCroissant);
+System.out.println(list);
+
+Comparator<Homme> hommeComparatorDecroissant = new HommeComparatorDecroissant();
+Collections.sort(list,hommeComparatorDecroissant);
+System.out.println(list);
+```
+
+## Redefinition comparator
+```java
+public class HommeComparatorCroissant implements Comparator<Homme>
+	{
+	@Override
+	public int compare(Homme o1, Homme o2)
+		{
+		if (!o1.getName().equals(o2.getName()))
+			{
+			return o1.getName().compareTo(o2.getName());
+			}
+		else
+			{
+			return Integer.compare(o1.getAge(), o2.getAge());
+			}
+		}
+	}
+```
+
+# Classe interne anonyme
+Comparator<Homme> comparator = new Comparator<Homme>(); // => on se met dansl es parenthèses puis ctrl + space et eclipse nous génère compare.
+
+> //Raccourci syntaxique qui va implémenter une class sans nom et qui implémente le comparator!
+
+
+# Java 21.12.17
+> Les choses qui ne changent pas (constante) sont en majuscule
+> Les types ENUM sont en majuscule
+
+# Déploiement linux
+Ne pas oublier de modifier les caractères de fin de lignes!
+```sh
+sed --in-place 's/\r//g' run.sh
+```
+Il faut également le rendre exécutable!
+```sh
+sudo chmod a+x run.sh
+```
+## Pour passer des paramètres
+$1 aura tous les paramètres.
+```sh
+./run.sh "a=1 b=2 c=3"
+```
+
+## Installer Java
+```sh
+chmod u+x linux-tools/installJava.sh
+sed --in-place 's/\r//g' linux-tools/installJava.sh
+sudo bash linux_tools/installJava.sh
+```
+
+## pouvoir taper le nom du programme n'importe ou
+```sh
+cd /usr/local/bin
+echo "#! /bin/bash
+pushd .
+cd /opt/quadra
+./run.sh "\$@"
+popd" | sudo tee quadra
+sudo chmod a+x quadra
+```
+
+# pi
+ssh pi@157.26.88.41
+scp /path/to/file username@a:/path/to/destination
+
+Pour les hashset il faut réimplémenter hashcode
+Pour les treeset il faut réimplémenter compareto (use interface blabla)
+```Java
+@Override
+public int compareTo(Humain humain2) {
+	if(this == humain2) {
+		return 1;
+	}
+	if(this.nom.equals(humain2)) {
+		if(this.age == humain2.age) {
+			return 1;
+		}
+	}
+	return 0;
+}
+```
+list
+set
+map
+runnable 
+iterable
+comparators
+comparable
+
+# plusieurs implémentation
+implrement blabla , implement otherthings
+
+# Polymorphisme
+```Java
+public class HmsTimes extends HmTimes
+...
+public HmsTimes(int heure, int minute, int seconde)
+	{
+	super(heure,minute);
+	this.seconds = seconde;
+	}
+```
