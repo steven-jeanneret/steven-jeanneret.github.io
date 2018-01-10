@@ -296,11 +296,15 @@ map.put("Personne" + i, i);
 ```
 
 #### Affichage
+
 #### Shortest
+
 ```java
 System.out.println(Arrays.toString(hashMap1.entrySet().toArray()));
 ```
+
 #### Normal
+
 Set<Entry<String, Integer>> set = map.entrySet();
 for(Entry<String, Integer> entry:set) {
 	{
