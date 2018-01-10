@@ -12,6 +12,7 @@ category: résumé
 - [Commentaire Java doc](#commentaire-java-doc)
 - [Utilitaires](#utilitaires)
 - [Théorie](#th%C3%A9orie)
+	- [Interface](#interface)
 - [Container](#container)
 	- [Tableau](#tableau)
 		- [Initialisation](#initialisation)
@@ -30,6 +31,8 @@ category: résumé
 		- [HashMap](#hashmap)
 			- [Insertion](#insertion)
 			- [Affichage](#affichage)
+			- [Shortest](#shortest)
+			- [Normal](#normal)
 - [Wrapper](#wrapper)
 - [Itérateur](#it%C3%A9rateur)
 - [Enum](#enum)
@@ -108,7 +111,7 @@ Raccourci commit dans eclipse (à droite de +)
 Sélectionner le projet Push (à gauche de +)
 
 # Convention
-small **camelCase** pour les variables
+small **camelCase** pour les variables et les fonctions
 Big **CamelCase** pour les classes
 
 # Raccourci clavier
@@ -124,19 +127,23 @@ Commentaire java doc ```/**``` -> enter
 Pour le voir : *Window -> ShowView -> JavaDoc*
 
 # Utilitaires
-*clic droit -> refactor -> rename* permet de changer le nom de l'objet dans tous le fichiers
-*double clic* sur un onglet pour le plein écran.
-kitebase *clic droit -> create -> new class*
+* *clic droit -> refactor -> rename* permet de changer le nom de l'objet dans tous le fichiers
+* *double clic* sur un onglet pour le plein écran.
+* kitebase *clic droit -> create -> new class*
 ```java
 int nbLance = Integer.MAX_VALUE/100;
 ```
 *Permet d'obtenir un nombre sans dépasser la valeur max du type!*
 
-.toString() //automatique pour un affichage
+.toString() //Convertis une donnée pour l'afficher
 
-syserr -> System.err.println("Erreur"); //Permet d'envoyer un message d'erreurs (rouge)
+> Les types de bases le font automatiquement
 
-sysexit -> System.exit(-1); //Permet d'arrêter le code
+* sysout -> System.out.println("Sortie standard"); //Permet d'envoyer un message
+
+* syserr -> System.err.println("Erreur"); //Permet d'envoyer un message d'erreurs (rouge)
+
+* sysexit -> System.exit(-1); //Permet d'arrêter le code
 
 # Théorie
 Package : c'est un dossier qui permet l'unicité
@@ -146,7 +153,7 @@ Les pointeurs sont sur la pile,
 
 **Static** on peut utiliser la méthode sans passer par un objet :
 ```java
-ClasseNom.methode();
+ClasseNom.methodeStatic();
 ```
 
 Java même type que C++ sauf les unsigned !
@@ -155,7 +162,8 @@ Java même type que C++ sauf les unsigned !
 **JAR** Java Archive
 **JDK** Java Developpement Kit
 
-**Interface** liste de méthodes publiques non-statiques non-implémentés
+## Interface
+> liste de méthodes publiques non-statiques non-implémentés
 
 Exemple d'interface : 
 * List
@@ -170,7 +178,7 @@ Exemple d'interface :
 ```java
 int[] tab = { 1, 2, 3 }; //Méthode rapide pour créer un tableau
 double[] tab = new double[] { 1, 2, 3 };
-double[] tab = new double[3]; //Si on connait pas les valeurs
+double[] tab = new double[3]; //Si on ne connait pas les valeurs
 int size = tab.length; //Taille du tableau
 ```
 
@@ -251,7 +259,8 @@ System.out.println(list)
 > Un set ne peut contenir qu'une fois la même valeur.
 
 ```java
-Set<Double> set = new TreeSet<Double>();
+Set<Double> setTree = new TreeSet<Double>();
+Set<Double> setHash = new HashSet<Double>();
 set.add(Math.PI);
 
 {//v1
@@ -287,6 +296,11 @@ map.put("Personne" + i, i);
 ```
 
 #### Affichage
+#### Shortest
+```java
+System.out.println(Arrays.toString(hashMap1.entrySet().toArray()));
+```
+#### Normal
 Set<Entry<String, Integer>> set = map.entrySet();
 for(Entry<String, Integer> entry:set) {
 	{
