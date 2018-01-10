@@ -382,7 +382,8 @@ Exemple d'arrondi supérieur
 ```java
 Math.ceil(nbLancees / (double)nbSimulations)
 ```
-atan2 permet de faire im/re sans ce soucier que re peut être = 0
+
+> atan2 permet de faire im/re sans ce soucier que re peut être = 0
 
 ## Random
 Exemple de nombre aléatoire entre 1 et size
@@ -540,6 +541,14 @@ on tapes : marque : " + this.brand ...
 
 on le séléectionnes et quick fix -> extract Use stringbuilder
 
+```java
+StringBuilder builder = new StringBuilder();
+builder.append(CARTESIEN);
+builder.append(arrondisseur.format(this.re));
+return builder.toString();
+```
+
+
 ## Tostring
 Source generate to string
 
@@ -602,7 +611,7 @@ public class Garage implements Iterable<Car>
 ...
 
 @Override
-public Iterator<Car> iterator(); {
+public Iterator<Car> iterator() {
 	return listCars.iterator();
 }
 ```
@@ -704,7 +713,7 @@ Cehmin du programme et
 # A trier
 En java avec == on compare les références.
 
-Pour comparer le contenu on utilise eiquals.
+Pour comparer le contenu on utilise equals.
 
 > Il faut la réimplémenter dans la classe de base elle ne sert à rien.
 
@@ -739,7 +748,7 @@ On créer une nouvelle interface
 ```java
 public interface Stack_I {
 	public int size();
-	public Integer po();
+	public Integer pop();
 	public void push(Integer x);
 }
 ```
@@ -941,6 +950,7 @@ scp /path/to/file username@a:/path/to/destination
 
 Pour les hashset il faut réimplémenter hashcode
 Pour les treeset il faut réimplémenter compareto (use interface blabla)
+
 ```Java
 @Override
 public int compareTo(Humain humain2) {
@@ -955,6 +965,7 @@ public int compareTo(Humain humain2) {
 	return 0;
 }
 ```
+
 list
 set
 map
@@ -967,6 +978,7 @@ comparable
 implrement blabla , implement otherthings
 
 # Polymorphisme
+
 ```Java
 public class HmsTimes extends HmTimes
 ...
