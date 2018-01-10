@@ -305,6 +305,7 @@ System.out.println(Arrays.toString(hashMap1.entrySet().toArray()));
 
 #### Normal
 
+```java
 Set<Entry<String, Integer>> set = map.entrySet();
 for(Entry<String, Integer> entry:set) {
 	{
@@ -316,6 +317,7 @@ for(Entry<String, Integer> entry:set) {
 		System.out.println(entry); //Version plus courte
 	}
 }
+```
 
 *Entry<T1,T2>*
 
