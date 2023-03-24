@@ -45,6 +45,9 @@ sudo bundle exec jekyll serve --watch
 ```
 
 # Use Courier Prime on a site
+## Resources for fonts
+[Resources of fonts that are free for commercial use](https://www.websiteplanet.com/blog/best-free-fonts/)
+
 ## Prerequisites
 [Download Courier Prime](/linux/2017/07/15/install-font-courier-prime.html)
 
