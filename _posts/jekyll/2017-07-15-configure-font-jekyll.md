@@ -9,6 +9,7 @@ category: jekyll
 	- [Cloning the repository from git and finish installation](#cloning-the-repository-from-git-and-finish-installation)
 - [Run jekyll](#run-jekyll)
 - [Use Courier Prime on a site](#use-courier-prime-on-a-site)
+	- [Resources of fonts](#resources-of-fonts)
 	- [Prerequisites](#prerequisites)
 	- [Generate all format](#generate-all-format)
 	- [Place files on the site](#place-files-on-the-site)
@@ -45,7 +46,7 @@ sudo bundle exec jekyll serve --watch
 ```
 
 # Use Courier Prime on a site
-## Resources for fonts
+## Resources of fonts
 [Resources of fonts that are free for commercial use](https://www.websiteplanet.com/blog/best-free-fonts/)
 
 ## Prerequisites
